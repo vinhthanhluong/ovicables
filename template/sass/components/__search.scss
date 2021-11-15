@@ -25,11 +25,24 @@
         color: rgba($color: $b-cl, $alpha: 0.4);
         font-size: 16px;
         cursor: pointer;
-        width: 40px;
-        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 28px;
+        height: 28px;
+        background-color: $g-F8F8-cl;
+        border-radius: 100%;
+        transition: all .3s ease;
+        &:hover{
+            background-color: $main-cl;
+            img{
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        img{
+            transition: all .3s ease;
+        }
     }
 
     .search-form{
@@ -40,9 +53,10 @@
         transition: all .3s ease;
         @include hidden;
         animation: fade-out-bottom 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-        // @include max-media($bk-576){
-        //     display: none;
-        // }
+        @include max-media($bk-576){
+            // display: none;
+            // right: -50%;
+        }
     }
 
     .f-control{
@@ -50,6 +64,9 @@
         line-height: 20px;
         height: auto;
         padding: 8px 38px 8px 15px;
+        &:hover , &:focus{
+            border-color: $main-cl;
+        }
         
     }
     .f-submit{

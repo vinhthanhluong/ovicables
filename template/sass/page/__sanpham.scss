@@ -1,0 +1,13 @@
+.page-product{
+    .column{
+        &.sibar{
+            width: calc(100%/ 12 * 3);
+        }
+
+        &.product-tx{
+            width: calc(100% / 12 * 9);
+        }
+    }
+
+    
+}

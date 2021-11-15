@@ -42,6 +42,25 @@ export default function TabModule() {
         
     }
 
+    const tabs_ft = $$('.ft-tab-title');
+    const panes_ft = $$('.ft-tab-content');
+
+    if (tabs_ft) {
+        tabs_ft.forEach((tab, index) => {
+            const pane = panes_ft[index];
+            tab.onclick = function () {
+                $('.ft-tab-title.active').classList.remove('active');
+                $('.ft-tab-content.active').classList.remove('active');
+
+                this.classList.add('active');
+                pane.classList.add('active');
+            }
+        })
+
+      
+        
+    }
+
  
       
    

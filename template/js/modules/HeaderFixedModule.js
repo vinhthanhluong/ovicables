@@ -8,7 +8,7 @@ export default function ScrollTopModule() {
 
             if (pod > 20) {
                 $('.header').addClass('--fix');
-                $('.main').css("margin-top", "100px");
+                $('.main').css("margin-top", "80px");
             } else {
                 $('.header').removeClass('--fix');
                 $('.main').css("margin-top", "0");

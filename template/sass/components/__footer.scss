@@ -1,14 +1,298 @@
-.footer{
+.footer {
     background-color: $bg-w-cl;
     margin-top: auto;
-    .logo{
-        min-width: 170px;
-        margin: auto;
+    background-color: $main-cl;
+    color: $w-cl;
+
+    .footer-main {
+        .columns {
+            justify-content: space-between;
+        }
+
+        .column {
+            &.ft-if {
+                width: calc(100% / 12 * 5 + 30px);
+
+                @include max-media($bk-d-1200) {
+                    width: calc(100% / 12 * 6 - 30px);
+                }
+
+                @include max-media($bk-d-1024) {
+                    width: 100%;
+                }
+            }
+
+            &.ft-tx {
+                width: calc(100% / 12 * 6 + 30px);
+
+                @include max-media($bk-d-1024) {
+                    width: 100%;
+                }
+            }
+        }
     }
 
-    .test{
-        width: 100%;
-        height: 500px;
-        background-color: wheat;
+    .ft-info {
+        display: flex;
+
+        @include max-media($bk-576){
+            flex-direction: column;
+        }
+
+        .ft-inner{
+            flex-shrink: 0;
+            @include max-media($bk-576){
+                width: max-content;
+                margin: 0 auto;
+            }
+        }
     }
+
+    .ft-box {
+        display: flex;
+        justify-content: space-between;
+
+        @include max-media($bk-d-768) {
+            flex-direction: column;
+        }
+
+        .ft-inner {
+            flex-shrink: 0;
+            padding-left: 10px;
+
+            @include max-media($bk-d-768) {
+                padding-left: 0;
+                padding-top: 20px;
+            }
+
+            .ft-tt{
+                @include max-media($bk-d-768){
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+
+    .ft-information {
+        padding-left: 22px;
+        @include max-media($bk-576){
+            padding-left: 0;
+            padding-top: 15px;
+        }
+    }
+
+    .box-social {
+        margin-top: 20px;
+        @include max-media($bk-576){
+            margin-top: 15px;
+            justify-content: center;
+        }
+        
+    }
+
+    .ft-tt {
+        margin-bottom: 13px;
+        line-height: 1.2;
+        @include max-media($bk-d-768){
+            margin-bottom: 10px;
+        }
+    }
+
+    .ft-list-text {
+        .ft-item {
+            line-height: 1.5;
+
+            .ft-link {
+                transition: all .3s ease;
+
+                &:hover {
+                    color: $main-cl-2;
+                }
+            }
+        }
+    }
+
+
+    .ft-tab {
+        max-width: 354px;
+
+        @include max-media($bk-d-1024) {
+            max-width: 100%;
+        }
+
+        .ft-tab-link {
+            display: flex;
+            position: relative;
+        }
+
+        .ft-tab-title {
+            padding: 0 13px;
+            cursor: pointer;
+            position: relative;
+            @include fz-18;
+            font-weight: bold;
+            opacity: .5;
+            text-transform: uppercase;
+
+            &.active {
+                opacity: 1;
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        .ft-tab-content {
+            display: none;
+
+            &.active {
+                display: block;
+                animation: fadeInUp 1s;
+            }
+        }
+
+        .ft-tab-tt {
+            margin-bottom: 13px;
+            @include max-media($bk-d-768){
+                margin-bottom: 10px;
+            }
+        }
+
+        .tab-item {
+            line-height: 1.5;
+        }
+
+        .tab-link {
+            transition: all .3s ease;
+
+            &:hover {
+                color: $main-cl-2;
+            }
+        }
+
+        // &-mobi{
+        //     .tab-link-mobi {
+        //         display: none;
+        //         width: 100%;
+        //         background-color: $main-cl;
+        //         color: $t-w-cl;
+        //         position: relative;
+        //         padding: 10px;
+        //         text-transform: uppercase;
+
+        //         @include max-media($bk-576) {
+        //             display: block;
+        //         }
+
+        //         &::before{
+        //             content: '\f107 ';
+        //             font-family: 'Fontawesome';
+        //             position: absolute;
+        //             top: 50%;
+        //             right: 20px;
+        //             transform: translateY(-50%);
+        //             font-size: 20px;
+        //         }
+
+        //     }
+
+        //     .ft-tab-link {
+        //         @include max-media($bk-576) {
+        //             border: none;
+        //             display: block;
+        //             background-color: $bg-w-cl;
+        //             padding: 10px;
+        //         }
+        //     }
+
+        //     .ft-tab-title {
+
+        //         // @include max-media($bk-d-992) {
+        //         //     padding: 20px;
+        //         // }
+
+        //         // @include max-media($bk-576) {
+        //         //     padding: 8px 10px;
+        //         // }
+
+        //         &:first-child {
+        //             padding-left: 0;
+
+        //             @include max-media($bk-576) {
+        //                 padding-left: 10px;
+        //             }
+        //         }
+
+        //         &:last-child {
+        //             padding-right: 0;
+
+        //             @include max-media($bk-576) {
+        //                 padding-right: 10px;
+        //             }
+        //         }
+
+        //         &.active {
+        //             @include max-media($bk-576) {
+        //                 background-color: wheat;
+        //             }
+        //         }
+        //     }
+        // }
+    }
+
+    .ft-list-menu {
+        column-count: 2;
+        column-gap: 34px;
+
+        @include max-media($bk-d-1200) {
+            column-gap: 15px;
+        }
+
+        .ft-item {
+            padding: 10px 0;
+
+            @include max-media($bk-d-1200) {
+                padding: 5px 0;
+            }
+        }
+
+        .ft-link {
+            opacity: .5;
+            @include fz-16;
+
+            display: block;
+            transition: all .3s ease;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.active {
+                opacity: 1;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba($color: $w-cl, $alpha: .3);
+
+        .copy-right {
+            background-color: transparent;
+            text-align: left;
+            padding: 14px 0 13px;
+            font-family: 'Google Sans';
+        }
+    }
+
+
+
+
+
 }

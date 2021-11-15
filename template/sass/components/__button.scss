@@ -34,60 +34,6 @@
    
 }
 
-.box-light-dark {
-
-    .switch {
-        background: transparent;
-        border-radius: 20px;
-        cursor: pointer;
-        display: block;
-        height: 40px;
-        position: relative;
-        width: 80px;
-
-        .switch-toggle {
-            background: $dark-cl;
-            border-radius: 20px;
-            display: block;
-            height: 100%;
-            transition: background .3s;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 34px;
-                height: 34px;
-                background: $light-cl;
-                border-radius: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                margin: 3px;   
-                transition: transform .3s, background .3s;
-            }
-        }
-
-        .switch-state {
-            opacity: 0;
-            pointer-events: none;
-            position: absolute;
-            outline: none;
-
-            &:focus~.switch-toggle {
-                box-shadow: 0 0 2px 3px rgba(0, 160, 204, 0.8);
-            }
-
-            &:checked~.switch-toggle {
-                background: $light-cl;
-
-                &::after {
-                    background: $dark-cl;
-                    transform: translate(calc(80px - 40px));
-                }
-            }
-        }
-    }
-}
 
 .hamburger-btn {
     width: 40px;
@@ -95,6 +41,7 @@
     position: relative;
     cursor: pointer;
     display: none;
+    margin-left: 10px;
 
     @include max-media($bk-d-1200) {
         display: block;

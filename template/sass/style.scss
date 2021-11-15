@@ -1,8 +1,10 @@
 @charset "utf-8";
 //Font Family
-@import url(../font/font-popins/stylesheet.css);
+@import url(../font/Arial/stylesheet.css);
+@import url( ../font/Google-San/stylesheet.css);
 //Libraries
 @import url(../js/libs/aos/aos.css);
+@import url(../js/libs/wow/wow.css);
 @import url(../js/libs/swiper/swiper.min.css);
 @import url(../js/libs/popup/magnific-popup.css);
 @import url(../js/libs/lightgallery/lightgallery.css);
@@ -40,7 +42,7 @@
 // Page
 @import './page/_home';
 @import './page/_404';
-
+@import './page/_sanpham';
 
 
 

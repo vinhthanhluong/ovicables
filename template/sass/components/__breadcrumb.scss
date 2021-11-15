@@ -19,23 +19,23 @@
         .breadcrumb-list {
             &:not(:first-child) {
                 &::before {
-                    content: '\f111 ';
+                    content: '/';
                     font-family: "Fontawesome";
-                    font-size: 8px;
-                    color:  red;
+                    color:  $w-cl;
                     padding-right: 8px;
+                    @include fz-18;
                 }
 
                 padding-left: 12px;
             }
 
             &.current{
-                color: $main-cl;
+                // color: $main-cl;
             }
 
             a {
-                font-size: 15px;
-                font-weight: bold;
+                @include fz-18;
+                
                 transition: all .3s ease;
 
                 @include max-media($bk-d-768) {
@@ -43,7 +43,7 @@
                 }
 
                 &:hover {
-                    color: $main-cl;
+                    text-decoration: underline;
                 }
             }
         }

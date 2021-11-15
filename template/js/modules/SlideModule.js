@@ -61,6 +61,15 @@ export default function SlideModule(){
         const pagination = el.querySelector('.swiper-pagination');
         const prevBtn = el.querySelector('.swiper-button-prev');
         const nextBtn = el.querySelector('.swiper-button-next');
+
+        const sliders = el.querySelector('.notslide');
+        
+        if(sliders){
+            var notSlide = false;
+        }else{
+            var notSlide = true;
+        }
+        
         try {
             new Swiper(slider, {
                 speed: 1200,
@@ -69,14 +78,16 @@ export default function SlideModule(){
                 observer: true,
                 observeParents: true,
                 observeSlideChildren: true,
-                autoplay: {
-                    delay: 4000,
-                },
+                // autoplay: {
+                //     delay: 4000,
+                // },
 
                 pagination: {
                     el: pagination,
                     clickable: true,
                 },
+
+                allowTouchMove: notSlide,
 
                 navigation: {
                     nextEl: nextBtn,

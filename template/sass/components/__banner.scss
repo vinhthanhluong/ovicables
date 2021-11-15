@@ -1,4 +1,4 @@
-.banner {
+.banners {
 	.swiper-wrapper {
 		margin: 0;
 	}
@@ -11,14 +11,111 @@
 		height: auto;
 		object-fit: cover;
 	}
+
+	.swiper-button-prev , .swiper-button-next{
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		outline: none;
+		background-color: rgba($color: #C4C4C4, $alpha: .5);
+
+		&::after{
+			font-size: 18px;
+			font-weight: bold;
+			color: $b-cl;
+		}
+	}
+
 	.swiper-button-prev {
-		left: 20px;
+		left: 30px;
 	}
 	.swiper-button-next {
-		right: 20px;
+		right: 30px;
 	}
 	.swiper-pagination {
 		position: absolute;
 		bottom: 0;
 	}
+
+	color: $w-cl;
+	
+
+	.banner-inner{
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: 143px 0 113px;
+		position: relative;
+		&::before{
+			content: '';
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: linear-gradient(89.82deg, #000000 0.17%, rgba(0, 0, 0, 0) 99.86%);
+		}
+		.banner-box{
+			z-index: 1;
+			position: relative;
+			max-width: 470px;
+		}
+		.banner-title{
+			margin-bottom: 60px;
+			line-height: 1.15;
+		}
+
+		.banner-call{
+			margin-bottom: 50px;
+		}
+
+		.banner-tt{
+			margin-bottom: 11px;
+			line-height: 1.1;
+		}
+
+		.banner-number{
+			display: block;
+			line-height: 1.1;
+			transition: all .3s ease;
+			&:hover{
+				color: $main-cl-2;
+			}
+		}
+
+		.banner-more{
+			background-color: $main-cl-2;
+			border-radius: 99px;
+			width: 175px;
+			height: 46px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include fz-18;
+			font-weight: bold;
+			transition: all .3s ease;
+			border: 1px solid $main-cl-2;
+			&:hover{
+				box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
+				img{
+					transform: translateX(7px);
+				}
+			}
+
+			img{
+				padding-left: 4px;
+				transition: all .3s ease;
+
+			}
+
+		}
+
+	}
+
+	&.banners-page{
+		background-color: $main-cl;
+		color: $w-cl;
+	}
+
+
 }
