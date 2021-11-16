@@ -1,10 +1,23 @@
 .related-product {
     padding: 86px 0 60px;
     background-color: $g-E5E5-cl;
+    overflow: hidden;
+    @include max-media($bk-d-1200){
+        padding: 60px 0;
+    }
+    @include max-media($bk-d-768){
+        padding: 40px 0;
+    }
 
     .product-title {
         margin-bottom: 35px;
         line-height: 1.1;
+        @include max-media($bk-d-1200){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-1024){
+            margin-bottom: 20px;
+        }
     }
 
     .swiper-custom {
@@ -14,26 +27,55 @@
     .swiper {
         margin: 0 -15px;
         padding-bottom: 40px;
+        @include max-media($bk-d-1200){
+            margin: 0 -7.5px;
+        }
+        @include max-media($bk-d-768){
+            padding-bottom: 30px;
+        }
     }
 
     .swiper-slide {
         width: calc(100% / 4);
         padding: 0 15px;
+        @include max-media($bk-d-1200){
+            padding: 0 7.5px;
+        }
+        @include max-media($bk-d-1024){
+            width: calc(100% / 3);
+        }
+        @include max-media($bk-d-768){
+            width: calc(100% / 2);
+        }
+        @include max-media($bk-576){
+            width: calc(100% / 1);
+        }
     }
 }
 
 .product-detail {
+    overflow: hidden;
+
     .column {
         &.pro-li {
             width: calc(100% / 12 * 7);
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+            }
         }
 
         &.pro-tx {
             width: calc(100% / 12 * 5);
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+            }
         }
     }
 
-    .swiper-button-next , .swiper-button-prev{
+    .swiper-button-next,
+    .swiper-button-prev {
         margin: 0;
         width: 100%;
         background-color: rgba($color: $g-F8F8-cl, $alpha: .7);
@@ -44,66 +86,116 @@
         // @include hidden;
         display: none;
 
-        &::after{
+        @include max-media($bk-d-768) {
+            width: 30px;
+            height: 100%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
             font-size: 20px;
             transform: rotate(90deg);
+
+            @include max-media($bk-d-768) {
+                transform: none;
+                font-size: 14px;
+            }
         }
-    
+
     }
 
-    .swiper-button-prev{
+    .swiper-button-prev {
         top: 0;
         left: 50%;
+
+        @include max-media($bk-d-768) {
+            left: 0px;
+            top: 50%;
+        }
     }
 
 
-    .swiper-button-next{
+    .swiper-button-next {
         top: auto;
         bottom: 0;
         left: 50%;
+
+        @include max-media($bk-d-768) {
+            left: auto;
+            bottom: auto;
+            top: 50%;
+            right: 0px;
+        }
     }
 
-  
+
     .product-slide {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row-reverse;
+        height: 100%;
 
-        .thumb-img{
+        @include max-media($bk-d-1024) {
+            max-height: 320px;
+        }
+
+        @include max-media($bk-d-768) {
+            max-height: 100%;
+            height: auto;
+        }
+
+        .thumb-img {
             border-radius: 10px;
             overflow: hidden;
-            img{
+            height: 100%;
+
+            img {
                 width: 100%;
                 height: 100%;
                 max-width: 100%;
                 object-fit: cover;
-                
             }
         }
 
         .slide-s-thumb {
             width: 170px;
 
-            &:hover{
-                .swiper-button-next , .swiper-button-prev{
+            @include max-media($bk-d-1024) {
+                width: 110px;
+            }
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+            }
+
+            &:hover {
+
+                .swiper-button-next,
+                .swiper-button-prev {
                     // @include visible;
                     display: flex;
                 }
             }
 
             .swiper {
-               height: 390px;
+                max-height: 390px;
+
+                @include max-media($bk-d-1024) {
+                    max-height: 320px;
+                }
             }
 
-            .swiper-slide{
+            .swiper-slide {
                 width: 100%;
             }
-            .swiper-slide-thumb-active{
-                .thumb-img{
+
+            .swiper-slide-thumb-active {
+                .thumb-img {
                     border-color: $main-cl;
                 }
             }
 
-            .thumb-img{
+            .thumb-img {
                 border: 3px solid transparent;
                 transition: all .3s ease;
             }
@@ -111,8 +203,32 @@
 
         .slide-b-thumb {
             width: calc(100% - 170px);
+            height: 100%;
             padding-left: 30px;
             border-radius: 10px;
+
+            @include max-media($bk-d-1200) {
+                padding-left: 15px;
+            }
+
+            @include max-media($bk-d-1024) {
+                width: calc(100% - 110px);
+                padding-left: 10px;
+            }
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+                padding-left: 0;
+                padding-bottom: 15px;
+            }
+
+            @include max-media($bk-576) {
+                padding-bottom: 10px;
+            }
+
+            .swiper {
+                height: 100%;
+            }
         }
     }
 
@@ -131,6 +247,11 @@
             margin: 20px 0;
             border-top: 1px solid $g-C4C4-cl;
             border-bottom: 1px solid $g-C4C4-cl;
+
+            @include max-media($bk-d-1024) {
+                padding: 15px 0;
+                margin: 15px 0;
+            }
         }
 
         .product-tex {
@@ -159,6 +280,10 @@
             padding: 7px 0;
             transition: all .3s ease;
 
+            @include max-media($bk-576) {
+                width: 100%;
+            }
+
             &:hover {
                 img {
                     transform: translateX(5px);
@@ -181,18 +306,38 @@
     }
 
 
-    .product-tab{
+    .product-tab {
         margin-top: 86px;
-        .tab-link{
+
+        @include max-media($bk-d-1200) {
+            margin-top: 50px;
+        }
+
+        @include max-media($bk-d-1024) {
+            margin-top: 30px;
+        }
+
+        .tab-link {
             border-bottom: 1px solid $g-C4C4-cl;
             padding-bottom: 10px;
+            @include max-media($bk-d-768){
+                border-bottom: 0;
+                background-color: rgba($color: $main-cl, $alpha: .1);
+                border-radius: 0;
+            }
         }
-        .tab-title{
+
+        .tab-title {
             padding: 10px 32px 9px;
-            color:rgba($color: $b-cl, $alpha: .6);
+            color: rgba($color: $b-cl, $alpha: .6);
             @include fz-16;
             border-radius: 99px;
-            &.active{
+
+            @include max-media($bk-d-768) {
+                padding: 10px 20px 9px;
+            }
+
+            &.active {
                 color: $w-cl;
                 font-weight: bold;
                 background-color: $main-cl;
@@ -200,91 +345,153 @@
             }
         }
 
-        .tab-content{
+        .tab-content {
             margin-top: 30px;
+
+            @include max-media($bk-d-768) {
+                margin-top: 20px;
+            }
         }
-        .product-box{
-            &.cols-df{
+
+        .product-box {
+            &.cols-df {
                 display: flex;
                 flex-wrap: wrap;
                 margin: -15px;
+
+                @include max-media($bk-d-1024) {
+                    margin: -7.5px;
+                }
             }
         }
 
-        .product-lt{
+        .product-lt {
             width: calc(100% / 12 * 8);
             padding: 15px;
+
+            @include max-media($bk-d-1024) {
+                padding: 7.5px;
+                width: 100%;
+            }
         }
 
-        .product-rt{
+        .product-rt {
             width: calc(100% / 12 * 4);
             padding: 15px;
+
+            @include max-media($bk-d-1024) {
+                padding: 7.5px;
+                width: 100%;
+            }
         }
 
-        .mona-content{
-            P{
+        .mona-content {
+            P {
                 font-weight: normal;
                 @include fz-16;
                 line-height: 1.1;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
 
-            .mona-img{
+            .mona-img {
                 margin: 30px 0;
+
+                @include max-media($bk-d-1024) {
+                    margin: 15px 0;
+                }
             }
         }
 
-        .box-dload{
+        .box-dload {
             padding: 30px 30px 20px;
             border-radius: 10px;
             border: 1px solid rgba($color: $b-cl, $alpha: .1);
             background-color: $g-F8F8-cl;
             color: #18274A;
-            &:not(:first-child){
-                margin-top: 30px;
+
+            @include max-media($bk-d-1024) {
+                padding: 20px;
             }
 
-            .dload-t{
+            &:not(:first-child) {
+                margin-top: 30px;
+
+                @include max-media($bk-d-1024) {
+                    margin-top: 20px;
+                }
+            }
+
+            .dload-t {
                 margin-bottom: 18px;
                 line-height: 1.7;
             }
 
-            .file-dload{
+            .file-dload {
                 display: flex;
                 align-items: center;
             }
 
-            .file-tx{
+            .file-tx {
                 padding-left: 20px;
             }
 
-            .file-tt{
+            .file-tt {
                 transition: all .3s ease;
-                &:hover{
+
+                &:hover {
                     color: $main-cl-2;
                 }
             }
 
         }
 
-       
 
-        
+
+
     }
 
-    .spectfication{
-        thead{
-            td{
+    .spect-box {
+        @include max-media($bk-576) {
+            overflow: auto;
+            overflow-x: scroll;
+        }
+    }
+
+    .spectfication {
+        width: 100%;
+
+        @include max-media($bk-576) {
+            min-width: 600px;
+        }
+
+        thead {
+            td {
                 padding: 27px 15px 28px;
+
+                @include max-media($bk-d-1024) {
+                    padding: 20px 15px;
+                }
+
+                @include max-media($bk-d-768) {
+                    padding: 15px 10px;
+                }
             }
-        }   
-        
-        tbody{
-            td{
+        }
+
+        tbody {
+            td {
                 padding: 14px;
             }
         }
 
-        td{
+        td {
             text-align: center;
             border: 1px solid rgba($color: $b-cl, $alpha: .1);
         }

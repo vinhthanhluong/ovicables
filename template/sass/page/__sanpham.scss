@@ -1,98 +1,96 @@
 .page-product {
+    overflow: hidden;
+
     .column {
         &.sibar {
             width: calc(100%/ 12 * 3);
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.product-tx {
             width: calc(100% / 12 * 9);
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
-    .product-inner{
-        .column{
+    .product-inner {
+        .column {
             width: calc(100% / 3);
+
+            @include max-media($bk-d-768) {
+                width: calc(100% / 2);
+            }
         }
     }
 
 
-    .product-bx{
+    .product-bx {
         height: 100%;
+
+        .product-text {
+            @include max-media($bk-d-1024) {
+                padding: 15px;
+            }
+            @include max-media($bk-576){
+                padding: 10px;
+            }
+        }
     }
 
-    &.custommer-pro{
-        .product-bx{
+    &.custommer-pro {
+        .product-bx {
             background-color: $g-E5E5-cl;
             // display: flex;
             // flex-direction: column;
 
-            .product-img{
+            .product-img {
                 padding: 30px;
                 height: calc(100% - 75px);
                 display: flex;
                 align-items: center;
-                img{
-                    margin:  auto;
+                @include max-media($bk-d-1024){
+                    height: calc(100% - 65px);
+                }
+                @include max-media($bk-d-992){
+                    height: calc(100% - 61px);
+                    padding: 20px;
+                }
+                @include max-media($bk-576){
+                    height: calc(100% - 51px);
+                    padding: 20px 10px;
+                }
+
+                img {
+                    margin: auto;
                 }
             }
 
-            .product-name{
+            .product-name {
                 color: $b-cl;
             }
 
-            .product-text{
+            .product-text {
                 // margin-top: auto;
                 background-color: $w-cl;
+                @include max-media($bk-d-768){
+                    min-height: 61px;
+                }
+                @include max-media($bk-d-768){
+                    min-height: 51px;
+                }
             }
-            
+
         }
     }
-
-    // .product-bx {
-    //     border-radius: 10px;
-    //     overflow: hidden;
-    //     transition: all .3s ease;
-
-    //     &:hover {
-    //         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
-    //         border-color: transparent;
-
-    //         .product-text {
-    //             border-color: transparent;
-    //         }
-
-    //         .product-img {
-    //             img {
-    //                 transform: scale(1.1);
-    //             }
-    //         }
-    //     }
-
-    //     .product-img {
-    //         overflow: hidden;
-
-    //         img {
-    //             transition: all .3s ease;
-    //         }
-    //     }
-
-    //     .product-text {
-    //         padding: 20px;
-    //         border: 1px solid rgba($color: $b-cl, $alpha: .3);
-    //         border-top: 0;
-    //         border-radius: 0 0 10px 10px;
-    //     }
-
-    //     .product-name {
-    //         line-height: 1.1;
-    //         transition: all .3s ease;
-    //         color: $main-cl;
-    //     }
-    // }
 }
 
 .slide-certification {
     background-color: rgba($color: $main-cl, $alpha: .05);
+    overflow: hidden;
 
     .certi-title {
         // margin-bottom: 30px;
@@ -139,7 +137,7 @@
             background-size: cover;
             width: 30px;
             height: 30px;
-            
+
         }
 
 
@@ -148,6 +146,7 @@
     .swiper-button-prev {
         left: -30px;
         transform: translateX(-100%);
+
         &::after {
             content: '';
             background-image: url('../img/svg/icon-prev.svg');
@@ -157,6 +156,7 @@
     .swiper-button-next {
         right: -30px;
         transform: translateX(100%);
+
         &::after {
             content: '';
             background-image: url('../img/svg/icon-next.svg');

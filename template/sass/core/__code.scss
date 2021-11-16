@@ -2,7 +2,7 @@
     color: $main-cl;
 }
 
-.f-gg-sans{
+.f-gg-sans {
     font-family: "Google Sans";
 }
 
@@ -51,11 +51,31 @@
     .search-f {
         position: relative;
 
+        &.not-btn {
+            .f-control {
+                padding: 12px 30px;
+                @include max-media($bk-d-1200){
+                    padding: 12px 20px;
+                }
+                @include max-media($bk-992){
+                    padding: 12px 15px;
+                }
+            }
+        }
+
         .f-control {
             border-color: rgba($color: $b-cl, $alpha: .3);
             border-radius: 99px;
             height: 40px;
             padding: 12px 60px 12px 30px;
+
+            @include max-media($bk-d-1200) {
+                padding: 12px 50px 12px 20px;
+            }
+
+            @include max-media($bk-d-992){
+                padding: 10px 45px 10px 15px;
+            }
 
             &::placeholder {
                 font-style: italic;
@@ -82,6 +102,10 @@
             align-items: center;
             justify-content: center;
 
+            @include max-media($bk-d-1200) {
+                width: 40px;
+            }
+
             img {
                 filter: brightness(0) invert(1);
                 width: 15px;
@@ -93,40 +117,60 @@
 
 .category {
     margin-top: 30px;
+    @include max-media($bk-d-1024){
+        margin-top: 20px;
+    }
+
     .cate-title {
         margin-bottom: 15px;
         display: flex;
         align-items: center;
+        @include max-media($bk-d-1024){
+            margin-bottom: 10px;
+        }
 
         img {
             padding-right: 9px;
         }
     }
 
-    .cate-box{
-        &:not(:first-child){
+    .cate-box {
+        &:not(:first-child) {
             margin-top: 45px;
+            @include max-media($bk-d-1200){
+                margin-top: 30px;
+            }
+            @include max-media($bk-d-1024){
+                margin-top: 20px;
+            }
         }
     }
 
-    .cate-content{
+    .cate-content {
         padding-left: 35px;
+        @include max-media($bk-d-1024){
+            padding-left: 20px;
+        }
     }
 
     .cate-item {
 
         &:not(:first-child) {
             margin-top: 20px;
+            @include max-media($bk-d-1024){
+                margin-top: 15px;
+            }
         }
 
         .cate-link {
             line-height: 1.1;
             transition: all .3s ease;
-            &:hover{
+
+            &:hover {
                 color: $main-cl;
             }
 
-            &.active{
+            &.active {
                 color: $main-cl;
             }
         }
@@ -141,6 +185,7 @@
     transition: all .3s ease;
     background-color: $w-cl;
     height: 100%;
+
     &:hover {
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
         border-color: transparent;
@@ -176,5 +221,6 @@
         line-height: 1.1;
         transition: all .3s ease;
         color: $main-cl;
+        @include line-clamp(2);
     }
 }

@@ -1,8 +1,13 @@
 .about-us {
     background-color: rgba($color: $main-cl, $alpha: .05);
+    overflow: hidden;
 
     .column {
         width: 50%;
+
+        @include max-media($bk-d-992) {
+            width: 100%;
+        }
     }
 
     .about-title {
@@ -13,6 +18,10 @@
     .about-item {
         &:not(:first-child) {
             margin-top: 30px;
+
+            @include max-media($bk-d-1200) {
+                margin-top: 20px;
+            }
         }
 
         .about-tt {
@@ -20,6 +29,10 @@
             display: flex;
             align-items: center;
             line-height: 1.1;
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 10px;
+            }
 
             img {
                 padding-right: 9px;
@@ -30,15 +43,38 @@
             line-height: 1.1;
             padding-left: 25px;
         }
+    }
 
+    .about-wrap-ig {
+        position: relative;
 
+        @include max-media($bk-d-992) {
+            margin: 0 auto;
+            max-width: 500px;
+        }
 
-
+        @include max-media($bk-576) {
+            max-width: 100%;
+        }
     }
 
     .about-box-img {
         position: relative;
         padding-top: 84%;
+
+        @include max-media($bk-d-1200) {
+            padding-top: 97%;
+        }
+
+        @include max-media($bk-d-992) {
+            height: 100%;
+            padding-top: 98%;
+        }
+
+        @include max-media($bk-576) {
+            height: 100%;
+            padding-top: 90%;
+        }
 
         img {
             width: auto;
@@ -53,21 +89,45 @@
             position: absolute;
             border-radius: 10px;
 
+
             &:nth-child(1) {
                 top: 0;
                 left: 0;
+
+                @include max-media($bk-576) {
+                    width: 57%;
+                }
             }
 
             &:nth-child(2) {
                 bottom: 0;
                 left: 86px;
                 z-index: 2;
+
+                @include max-media($bk-d-992) {
+                    left: 38%;
+                    transform: translateX(-50%);
+                }
+
+                @include max-media($bk-576) {
+                    width: 35%;
+                    left: 42%;
+                }
             }
 
             &:nth-child(3) {
                 left: 232px;
                 top: 53px;
                 z-index: 1;
+
+                @include max-media($bk-d-992) {
+                    left: auto;
+                    right: 0;
+                }
+
+                @include max-media($bk-576) {
+                    width: 50%;
+                }
             }
         }
 
@@ -75,17 +135,31 @@
 }
 
 .staff {
+    overflow: hidden;
+
     .columns {
         align-items: center;
+
+        @include max-media($bk-d-768) {
+            // flex-direction: column-reverse;
+        }
     }
 
     .column {
         &.staff-tx {
             width: calc(100% / 12 * 5);
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+            }
         }
 
         &.staff-ig {
             width: calc(100% / 12 * 7);
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+            }
         }
     }
 
@@ -94,6 +168,14 @@
         border-left: 2px solid $b-cl;
         border-radius: 2px;
         padding-left: 12px;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 20px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 15px;
+        }
 
     }
 
@@ -108,6 +190,14 @@
 
     .staff-t {
         margin-bottom: 15px;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 10px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 5px;
+        }
     }
 
     .staff-desc {
@@ -118,6 +208,14 @@
         position: relative;
         height: 30px;
         margin-top: 30px;
+
+        @include max-media($bk-d-1200) {
+            margin-top: 20px;
+        }
+
+        @include max-media($bk-d-1200) {
+            margin-top: 15px;
+        }
     }
 
     .swiper-button-next,
@@ -156,6 +254,16 @@
         border-radius: 10px;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
 
+        @include max-media($bk-d-1440) {
+            width: auto;
+        }
+
+        .swiper {
+            @include max-media($bk-d-992) {
+                border-radius: 10px;
+            }
+        }
+
     }
 
     .staff-img {
@@ -176,9 +284,14 @@
 
 .choose-us {
     background-color: rgba($color: $main-cl, $alpha: .05);
+    overflow: hidden;
 
     .column {
         width: 50%;
+
+        @include max-media($bk-d-992) {
+            width: 100%;
+        }
     }
 
     .us-img {
@@ -198,10 +311,15 @@
     .us-desc {
         margin-bottom: 45px;
         line-height: 1.1;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 25px;
+        }
     }
 
     .us-list {
         display: flex;
+        flex-wrap: wrap;
     }
 
     .us-item {
@@ -216,7 +334,19 @@
         position: relative;
         text-align: center;
 
+        @include max-media($bk-d-1200) {
+            height: auto;
+            padding: 20px;
+        }
+
+        @include max-media($bk-576) {
+            width: 100%;
+        }
+
         &:not(:first-child) {
+            @include max-media($bk-576) {
+                margin-top: 10px;
+            }
 
             &::before {
                 content: '';
@@ -227,23 +357,38 @@
                 left: 0;
                 transform: translateY(-50%);
                 border-left: 1px $g-8080-cl dashed;
+
+                @include max-media($bk-576) {
+                    display: none;
+                }
             }
         }
     }
 
     .us-icon {
         margin-bottom: 30px;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 20px;
+        }
     }
 
     .us-t {
         line-height: 1.1;
         padding: 0 40px;
+
+        @include max-media($bk-d-1200) {
+            padding: 0 20px;
+            padding: 0;
+        }
     }
 
 
 }
 
 .customer-say {
+    overflow: hidden;
+
     .customer-title {
         margin-bottom: 30px;
         line-height: 1.25;
@@ -301,7 +446,7 @@
 
     }
 
-    .customer-ig{
+    .customer-ig {
         position: relative;
     }
 
@@ -313,7 +458,7 @@
         height: 585px;
         margin: 0 auto;
 
-        .ig-rote-wrap{
+        .ig-rote-wrap {
             @include pos-mid;
             width: 100%;
             height: 100%;
@@ -327,7 +472,8 @@
         border: 1px dashed $main-cl;
         width: 420px;
         height: 420px;
-        .ig-rote-wap{
+
+        .ig-rote-wap {
             @include pos-mid;
             width: 100%;
             height: 100%;
@@ -340,32 +486,37 @@
         width: 94px;
         height: 94px;
         border-radius: 100%;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             max-width: 100%;
             object-fit: cover;
             border-radius: 100%;
         }
-        &:nth-child(1){
+
+        &:nth-child(1) {
             top: 0;
             left: 50%;
-            transform: translate(-50% , -50%);
+            transform: translate(-50%, -50%);
         }
-        &:nth-child(2){
+
+        &:nth-child(2) {
             bottom: -4%;
             left: 2%;
             transform: translateY(-100%);
         }
-        &:nth-child(3){
+
+        &:nth-child(3) {
             bottom: 0;
             right: 20%;
-            transform: translate(0% , 40%);
+            transform: translate(0%, 40%);
         }
-        &:nth-child(4){
+
+        &:nth-child(4) {
             top: 40%;
             right: 0;
-            transform: translate(50% , -50%);
+            transform: translate(50%, -50%);
         }
 
     }
@@ -375,32 +526,37 @@
         width: 60px;
         height: 60px;
         border-radius: 100%;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             max-width: 100%;
             object-fit: cover;
             border-radius: 100%;
         }
-        &:nth-child(1){
+
+        &:nth-child(1) {
             top: 20%;
             left: 0%;
-            transform: translate(38% , -50%);
+            transform: translate(38%, -50%);
         }
-        &:nth-child(2){
+
+        &:nth-child(2) {
             bottom: 0;
             left: 40%;
-            transform: translate(-100% , 50%);
+            transform: translate(-100%, 50%);
         }
-        &:nth-child(3){
+
+        &:nth-child(3) {
             bottom: 35%;
             right: 0;
-            transform: translate(30% , 100%);
+            transform: translate(30%, 100%);
         }
-        &:nth-child(4){
-            top:0%;
+
+        &:nth-child(4) {
+            top: 0%;
             right: 0;
-            transform: translate(-50% , 30%);
+            transform: translate(-50%, 30%);
         }
     }
 
@@ -424,13 +580,26 @@
 
 .capacity-profile {
     background-color: rgba($color: $main-cl, $alpha: .05);
+    overflow: hidden;
+    .columns{
+        @include max-media($bk-d-768){
+            flex-direction: column-reverse;
+        }
+    }
 
     .column {
         width: 50%;
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
     }
 
     .profile-title {
         margin-bottom: 15px;
+        line-height: 1.1;
+        @include  max-media($bk-d-768){
+            margin-bottom: 10px;
+        }
     }
 
     .profile-desc {
@@ -449,6 +618,9 @@
         justify-content: center;
         @include fz-18;
         font-weight: bold;
+        @include max-media($bk-d-1024){
+            margin-top: 20px;
+        }
 
         &:hover {
             img {
@@ -467,6 +639,10 @@
         width: 655px;
         padding-top: 86%;
         position: relative;
+
+        @include max-media($bk-d-1440) {
+            width: auto;
+        }
     }
 
     .profile-img {
@@ -477,17 +653,27 @@
         &:nth-child(1) {
             top: 0;
             z-index: 1;
+            @include max-media($bk-d-1200){
+                width: 50%;
+            }
         }
 
         &:nth-child(2) {
             top: 0;
             right: 30px;
             z-index: 2;
+            @include max-media($bk-d-1200){
+                top: 20px;
+                width: 60%;
+            }
         }
 
         &:nth-child(3) {
             bottom: 0;
             right: 0;
+            @include max-media($bk-d-1200){
+                width: 70%;
+            }
         }
 
         img {

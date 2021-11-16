@@ -18,6 +18,12 @@
 			transition: all .3 ease;
 			@include lh(24, 14);
 			@include flex-mid;
+
+			@include max-media($bk-576){
+				width: 38px;
+				height: 38px;
+			}
+
 			&.current {
 				background-color: $main-cl;
 				color: $t-w-cl;
@@ -36,6 +42,10 @@
 			@include flex-mid;
 			transition: all .3 ease;
 			border-radius: 6px;
+			@include max-media($bk-576){
+				width: 38px;
+				height: 38px;
+			}
 			&:hover {
 				background-color: $main-cl;
 				img{

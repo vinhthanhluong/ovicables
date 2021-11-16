@@ -11,25 +11,30 @@ export default function SlideProductModule() {
                 const thumbsmall = new Swiper('#thumbs-small', {
                     speed: 1000,
                     // loop: true,
-                    spaceBetween: 15,
-                    slidesPerView: 3,
+                
                     freeMode: true,
                     watchSlidesProgress: true,
-                    direction: 'vertical',
+                    // direction: 'vertical',
 
                   
-                    // breakpoints: {
-                    //     320: {
-                    //         spaceBetween: 10,
-                    //         slidesPerView: 3,
-                    //     },
+                    breakpoints: {
+                        320: {
+                            spaceBetween: 7,
+                            slidesPerView: 3,
+                            direction: 'horizontal',
+                        },
 
-                    //     768: {
-                    //         spaceBetween: 10,
-                    //         slidesPerView: 4,
-
-                    //     }
-                    // }
+                        768: {
+                            spaceBetween: 10,
+                            slidesPerView: 3,
+                            direction: 'vertical',
+                        },
+                        1024: {
+                            spaceBetween: 15,
+                            slidesPerView: 3,
+                            direction: 'vertical',
+                        }
+                    }
                 });
 
                 const thumbbig = new Swiper('#thumbs-big', {
