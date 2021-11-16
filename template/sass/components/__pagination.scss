@@ -1,40 +1,46 @@
 .pagination {
+	padding-top: 25px;
 	margin-top: 30px;
 	text-align: center;
+	border-top: 1px solid rgba($color: #C4C4C4, $alpha: .5 );
 	li {
 		display: inline-block;
 		vertical-align: middle;
+		&:not(:first-child){
+			margin-left: 7px;
+		}
 		.page-numbers {
-			width: 40px;
-			height: 40px;
-			border-radius: 100%;
-			border: 1px solid $border-cl;
+			width: 44px;
+			height: 44px;
+			background-color: $g-F8F8-cl;
+			border-radius: 6px;
 			//color: $t-b-cl;
-			font-weight: bold;
 			transition: all .3 ease;
 			@include lh(24, 14);
 			@include flex-mid;
 			&.current {
 				background-color: $main-cl;
 				color: $t-w-cl;
-				border: 1px solid transparent;
+				font-weight: bold;
 			}
 			&:hover {
 				background-color: $main-cl;
 				color: $t-w-cl;
-				border: 1px solid transparent;
+				font-weight: bold;
 			}
 		}
 
 		.page-arrow{
-			width: 40px;
-			height: 40px;
+			width: 44px;
+			height: 44px;
 			@include flex-mid;
-			font-size: 16px;
 			transition: all .3 ease;
+			border-radius: 6px;
 			&:hover {
 				background-color: $main-cl;
-				color: $t-w-cl;
+				img{
+					filter: brightness(0) invert(1);
+				}
 			}
 		}
 	}

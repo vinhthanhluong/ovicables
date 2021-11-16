@@ -5,36 +5,42 @@ export default function SlideProductModule() {
             const swiper = document.querySelector('#slide-thumbs');
             const sliderContainer = swiper.querySelector('.swiper');
             const SliderPagination = swiper.querySelector('.swiper-pagination');
-            const sliderPrevBtn = swiper.querySelector('.swiper-prev');
-            const sliderNextBtn = swiper.querySelector('.swiper-next');
+            const sliderPrevBtn = swiper.querySelector('.swiper-button-prev');
+            const sliderNextBtn = swiper.querySelector('.swiper-button-next');
             try {
                 const thumbsmall = new Swiper('#thumbs-small', {
                     speed: 1000,
-                    loop: true,
-                    spaceBetween: 10,
-                    slidesPerView: 4,
+                    // loop: true,
+                    spaceBetween: 15,
+                    slidesPerView: 3,
                     freeMode: true,
-                    watchSlidesVisibility: true,
                     watchSlidesProgress: true,
-                    breakpoints: {
-                        320: {
-                            spaceBetween: 10,
-                            slidesPerView: 3,
-                        },
+                    direction: 'vertical',
 
-                        768: {
-                            spaceBetween: 10,
-                            slidesPerView: 4,
+                  
+                    // breakpoints: {
+                    //     320: {
+                    //         spaceBetween: 10,
+                    //         slidesPerView: 3,
+                    //     },
 
-                        }
-                    }
+                    //     768: {
+                    //         spaceBetween: 10,
+                    //         slidesPerView: 4,
+
+                    //     }
+                    // }
                 });
 
                 const thumbbig = new Swiper('#thumbs-big', {
                     speed: 1000,
-                    loop: true,
+                    // loop: true,
                     slidesPerView: 1,
                     spaceBetween: 10,
+                    navigation: {
+                        nextEl: sliderNextBtn,
+                        prevEl: sliderPrevBtn,
+                    },
                     thumbs: {
                         swiper: thumbsmall,
                     },

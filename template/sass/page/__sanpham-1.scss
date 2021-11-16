@@ -1,0 +1,293 @@
+.related-product {
+    padding: 86px 0 60px;
+    background-color: $g-E5E5-cl;
+
+    .product-title {
+        margin-bottom: 35px;
+        line-height: 1.1;
+    }
+
+    .swiper-custom {
+        overflow: hidden;
+    }
+
+    .swiper {
+        margin: 0 -15px;
+        padding-bottom: 40px;
+    }
+
+    .swiper-slide {
+        width: calc(100% / 4);
+        padding: 0 15px;
+    }
+}
+
+.product-detail {
+    .column {
+        &.pro-li {
+            width: calc(100% / 12 * 7);
+        }
+
+        &.pro-tx {
+            width: calc(100% / 12 * 5);
+        }
+    }
+
+    .swiper-button-next , .swiper-button-prev{
+        margin: 0;
+        width: 100%;
+        background-color: rgba($color: $g-F8F8-cl, $alpha: .7);
+        color: $b-cl;
+        height: 40px;
+        transform: translateX(-50%);
+        transition: all .3s ease;
+        // @include hidden;
+        display: none;
+
+        &::after{
+            font-size: 20px;
+            transform: rotate(90deg);
+        }
+    
+    }
+
+    .swiper-button-prev{
+        top: 0;
+        left: 50%;
+    }
+
+
+    .swiper-button-next{
+        top: auto;
+        bottom: 0;
+        left: 50%;
+    }
+
+  
+    .product-slide {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .thumb-img{
+            border-radius: 10px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+                
+            }
+        }
+
+        .slide-s-thumb {
+            width: 170px;
+
+            &:hover{
+                .swiper-button-next , .swiper-button-prev{
+                    // @include visible;
+                    display: flex;
+                }
+            }
+
+            .swiper {
+               height: 390px;
+            }
+
+            .swiper-slide{
+                width: 100%;
+            }
+            .swiper-slide-thumb-active{
+                .thumb-img{
+                    border-color: $main-cl;
+                }
+            }
+
+            .thumb-img{
+                border: 3px solid transparent;
+                transition: all .3s ease;
+            }
+        }
+
+        .slide-b-thumb {
+            width: calc(100% - 170px);
+            padding-left: 30px;
+            border-radius: 10px;
+        }
+    }
+
+    .product-inner {
+        .product-title {
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .product-desc {
+            line-height: 1.1;
+        }
+
+        .product-lis {
+            padding: 20px 0;
+            margin: 20px 0;
+            border-top: 1px solid $g-C4C4-cl;
+            border-bottom: 1px solid $g-C4C4-cl;
+        }
+
+        .product-tex {
+            &:not(:first-child) {
+                margin-top: 16px;
+            }
+        }
+
+        .product-te {
+            line-height: 1.3;
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .product-contact {
+            border-radius: 99px;
+            background-color: $main-cl-2;
+            color: $w-cl;
+            height: 44px;
+            width: 270px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7px 0;
+            transition: all .3s ease;
+
+            &:hover {
+                img {
+                    transform: translateX(5px);
+                }
+
+            }
+
+            img {
+                filter: brightness(0) invert(1);
+                padding-left: 16px;
+                transition: all .3s ease;
+            }
+
+
+        }
+
+
+
+
+    }
+
+
+    .product-tab{
+        margin-top: 86px;
+        .tab-link{
+            border-bottom: 1px solid $g-C4C4-cl;
+            padding-bottom: 10px;
+        }
+        .tab-title{
+            padding: 10px 32px 9px;
+            color:rgba($color: $b-cl, $alpha: .6);
+            @include fz-16;
+            border-radius: 99px;
+            &.active{
+                color: $w-cl;
+                font-weight: bold;
+                background-color: $main-cl;
+                box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+            }
+        }
+
+        .tab-content{
+            margin-top: 30px;
+        }
+        .product-box{
+            &.cols-df{
+                display: flex;
+                flex-wrap: wrap;
+                margin: -15px;
+            }
+        }
+
+        .product-lt{
+            width: calc(100% / 12 * 8);
+            padding: 15px;
+        }
+
+        .product-rt{
+            width: calc(100% / 12 * 4);
+            padding: 15px;
+        }
+
+        .mona-content{
+            P{
+                font-weight: normal;
+                @include fz-16;
+                line-height: 1.1;
+            }
+
+            .mona-img{
+                margin: 30px 0;
+            }
+        }
+
+        .box-dload{
+            padding: 30px 30px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba($color: $b-cl, $alpha: .1);
+            background-color: $g-F8F8-cl;
+            color: #18274A;
+            &:not(:first-child){
+                margin-top: 30px;
+            }
+
+            .dload-t{
+                margin-bottom: 18px;
+                line-height: 1.7;
+            }
+
+            .file-dload{
+                display: flex;
+                align-items: center;
+            }
+
+            .file-tx{
+                padding-left: 20px;
+            }
+
+            .file-tt{
+                transition: all .3s ease;
+                &:hover{
+                    color: $main-cl-2;
+                }
+            }
+
+        }
+
+       
+
+        
+    }
+
+    .spectfication{
+        thead{
+            td{
+                padding: 27px 15px 28px;
+            }
+        }   
+        
+        tbody{
+            td{
+                padding: 14px;
+            }
+        }
+
+        td{
+            text-align: center;
+            border: 1px solid rgba($color: $b-cl, $alpha: .1);
+        }
+
+    }
+}
