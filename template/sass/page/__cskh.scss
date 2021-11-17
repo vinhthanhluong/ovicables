@@ -8,16 +8,28 @@
     .column {
         &.service-tx {
             width: calc(100% / 12 * 3);
+            @include max-media($bk-d-992){
+                width: 100%;
+            }
         }
 
         &.service-bx {
             width: calc(100% / 12 * 9);
+            @include max-media($bk-d-992){
+                width: 100%;
+            }
         }
     }
 
     .service-title {
         line-height: 1.1;
         margin-bottom: 15px;
+        br{
+            @include max-media($bk-d-992){
+                display: none;
+            }
+        }
+     
     }
 
     .service-desc {
@@ -28,11 +40,26 @@
         display: flex;
         flex-wrap: wrap;
         margin: -15px;
+
+        @include max-media($bk-d-1024) {
+            margin: -7.5px;
+        }
     }
 
     .service-col {
         width: calc(100% / 3);
         padding: 15px;
+
+        @include max-media($bk-d-1024) {
+            padding: 7.5px;
+        }
+        
+        @include max-media($bk-d-768){
+            width: calc(100% / 2);
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
     }
 
     .service-box {
@@ -42,6 +69,10 @@
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
         transition: all .3s ease;
         border-radius: 10px;
+
+        @include max-media($bk-d-1024) {
+            padding: 20px;
+        }
 
         &:hover {
             background-color: $main-cl;
@@ -56,6 +87,9 @@
 
         .service-img {
             margin-bottom: 30px;
+            @include max-media($bk-d-1024) {
+                margin-bottom: 20px;
+            }
 
             img {
                 transition: all .3s ease;
@@ -66,6 +100,9 @@
         .service-tt {
             margin-bottom: 14px;
             line-height: 1.1;
+            @include max-media($bk-d-1024) {
+                margin-bottom: 10px;
+            }
         }
 
         .service-t {
@@ -77,6 +114,12 @@
 .warranty-policy {
     .policy-title {
         margin-bottom: 30px;
+        @include max-media($bk-d-992){
+            margin-bottom: 20px;
+        }
+        @include max-media($bk-576){
+            margin-bottom: 15px;
+        }
     }
 
     .policy-item {
@@ -84,9 +127,12 @@
 
         &:not(:first-child) {
             margin-top: 30px;
+            @include max-media($bk-d-992){
+                margin-top: 20px;
+            }
         }
 
-        .policy-box{
+        .policy-box {
             &.active {
                 .policy-tt {
                     border-radius: 10px 10px 0 0;
@@ -104,7 +150,11 @@
             border-radius: 10px;
             transition: all .3s ease;
             cursor: pointer;
-            &::after{
+            @include max-media($bk-d-992){
+                padding: 15px 20px;
+            }
+
+            &::after {
                 content: '';
                 background-image: url('../img/svg/icon-plus.svg');
                 background-position: center;
@@ -122,6 +172,12 @@
             box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
             border-radius: 0 0 10px 10px;
             display: none;
+            @include max-media($bk-d-992){
+                padding: 20px;
+            }
+            @include max-media($bk-576){
+                padding: 15px;
+            }
         }
 
         .mona-content {
@@ -129,6 +185,7 @@
 
             p {
                 line-height: 1.1;
+
                 &:first-child {
                     margin-top: 0;
                 }

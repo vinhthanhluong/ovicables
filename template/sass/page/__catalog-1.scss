@@ -4,6 +4,9 @@
     background-repeat: no-repeat;
     .column{
         width: 50%;
+        @include max-media($bk-d-992){
+            width: 100%;
+        }
     }
 
     .quote-wrap{
@@ -12,13 +15,23 @@
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
         width: 100%;
         padding: 60px 30px;
-    }
-
-    .column{
-        width: 50%;
+        @include max-media($bk-d-1200){
+            padding:40px 30px;
+        }
+        @include max-media($bk-d-992){
+            padding:30px;
+        }
+        @include max-media($bk-576){
+            padding:20px;
+        }
     }
 
     .quote-img{
+        height: 100%;
+        @include max-media($bk-d-992){
+            width: 60%;
+            margin: 0 auto;
+        }
         img{
             width: 100%;
             height: 100%;
@@ -30,6 +43,15 @@
     .quote-title{
         line-height: 1.1;
         margin-bottom: 30px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 20px;
+        }
+
+        br{
+            @include max-media($bk-d-992){
+                display: none;
+            }
+        }
     }
 
 

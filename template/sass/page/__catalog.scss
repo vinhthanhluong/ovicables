@@ -1,4 +1,6 @@
 .catalog {
+    overflow: hidden;
+
     .cata-wrapper {
         position: relative;
     }
@@ -23,7 +25,7 @@
                     // margin: 0px;
                     transform: none;
                     box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
-                
+
                     &::before {
                         transform: translateY(100%);
                     }
@@ -34,7 +36,20 @@
                 }
             }
         }
+    }
 
+    .swiper{
+        @include max-media($bk-576){
+            padding-bottom: 40px;
+        }
+    }
+
+    .swiper-pagination{
+        bottom: 0;
+        @include hidden;
+        @include max-media($bk-576){
+            @include visible;
+        }
     }
 
     .swiper-button-next,
@@ -45,6 +60,20 @@
         top: 35%;
         transform: translateY(-50%);
 
+        @include max-media($bk-d-768) {
+            top: 30%;
+        }
+        @include max-media($bk-576) {
+        //    top: -5px;
+        //    transform: translateY(-100%);
+        //    width: 30px;
+        //    height: 30px;
+        //    border-radius: 100%;
+        //    border: 1px solid $b-cl;
+           display: none;
+        }
+       
+
         &::after {
             background-position: center;
             background-size: cover;
@@ -52,15 +81,34 @@
             font-size: 0;
             width: 100%;
             height: 100%;
+            // @include max-media($bk-576){
+            //     font-size: 14px;
+            //     width: auto;
+            //     line-height: 29px;
+            //     color: $b-cl;
+            // }
         }
     }
 
     .swiper-button-prev {
         left: 30px;
 
+        @include max-media($bk-d-1200) {
+            left: 0;
+        }
+        // @include max-media($bk-576) {
+        //     left: auto;
+        //     right: 40px;
+        // }
+
         &::after {
             content: '';
             background-image: url('../img/svg/icon-prev.svg');
+            // @include max-media($bk-576){
+            //     background: none;
+            //     content: 'prev';
+            //     margin-right: 1px;
+            // }
         }
 
     }
@@ -68,9 +116,18 @@
     .swiper-button-next {
         right: 30px;
 
+        @include max-media($bk-d-1200) {
+            right: 0;
+        }
+
         &::after {
             content: '';
             background-image: url('../img/svg/icon-next.svg');
+            // @include max-media($bk-576){
+            //     background: none;
+            //     content: 'next';
+            //     margin-left: 1px;
+            // }
         }
     }
 
@@ -84,6 +141,14 @@
             transform: scale(.8);
             margin: 0 50px;
             max-height: 500px;
+
+            // @include max-media(1899px){
+            //     transform: scale(.9);
+            // }
+            @include max-media($bk-576) {
+                margin: 0;
+            }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -107,20 +172,33 @@
             text-align: center;
             transform: translateY(100%);
             transition: all .3s ease;
+
+            @include max-media($bk-d-1024) {
+                margin-top: 20px;
+            }
         }
 
         .cata-title {
             margin-bottom: 15px;
             line-height: 1.1;
+
+            @include max-media($bk-d-1024) {
+                margin-bottom: 10px;
+            }
         }
 
         .cata-desc {
             margin-bottom: 30px;
             line-height: 1.1;
+
+            @include max-media($bk-d-1024) {
+                margin-bottom: 20px;
+            }
         }
 
         .cata-down {
-            width: 340px;
+            max-width: 340px;
+            width: 100%;
             height: 44px;
             border-radius: 99px;
             margin: 0 auto;
@@ -130,6 +208,10 @@
             background-color: $main-cl-2;
             color: $w-cl;
             transition: all .3s ease;
+            @include max-media($bk-576){
+                height: 40px;
+                width: 260px;
+            }
 
             &:hover {
                 letter-spacing: 1px;

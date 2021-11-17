@@ -243,17 +243,33 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        &:nth-child(2){
+        flex-wrap: wrap;
+
+        &:nth-child(2) {
             margin-top: 48px;
-        }
-        .bx-f {
-            width: calc(50% - 15px);
+            @include max-media($bk-d-1200){
+                margin-top: 30px;
+            }
+            @include max-media($bk-576){
+                margin-top: 15px;
+            }
         }
 
-        &:nth-child(1){
-            .bx-f{
-                &:nth-child(1){
-                    .f-control{
+        .bx-f {
+            width: calc(50% - 15px);
+            @include max-media($bk-576){
+                width: 100%;
+            }
+
+            &:nth-child(1){
+                margin-bottom: 20px;
+            }
+        }
+
+        &:nth-child(1) {
+            .bx-f {
+                &:nth-child(1) {
+                    .f-control {
                         font-weight: bold;
                     }
                 }
@@ -261,45 +277,51 @@
         }
     }
 
-    .f-control{
+    .f-control {
         border: none;
         border-bottom: 1px solid rgba($color: $b-cl, $alpha: .1);
         border-radius: 0px;
-        padding: 6px 0 8px ;
+        padding: 6px 0 8px;
         height: 40px;
         @include fz-16;
         height: auto;
 
-        &::placeholder{
+        &::placeholder {
             font-weight: normal;
             color: rgba($color: $b-cl, $alpha: .4);
             font-style: italic;
         }
 
-        &:focus , &:hover{
+        &:focus,
+        &:hover {
             border-color: $main-cl;
         }
     }
 
     .bx-f {
         width: 100%;
-        &.mt-60{
+
+        &.mt-60 {
             margin-top: 60px;
+            @include max-media($bk-d-1200){
+                margin-top: 30px;
+            }
         }
     }
 
-    textarea.f-control{
+    textarea.f-control {
         resize: none;
         height: 40px;
     }
-    .bx-submit{
+
+    .bx-submit {
         text-align: right;
     }
 
-    .f-submit{
+    .f-submit {
         width: 140px;
         height: 41px;
-        border-radius:  99px;
+        border-radius: 99px;
         background-color: $main-cl-2;
         color: $w-cl;
         @include fz-16;
@@ -308,6 +330,151 @@
         cursor: pointer;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
         transition: all .3s ease;
+
+        &:hover {
+            background-color: $main-cl;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+//popup CV
+.white-popup-block {
+    &.block-cv {
+        border-radius: 10px;
+        padding: 80px 100px;
+        max-width: 1170px;
+        @include max-media($bk-d-1200){
+            padding: 40px 30px;
+        }
+        @include max-media($bk-576){
+            padding: 20px;
+        }
+    }
+}
+
+.block-cv {
+    .application-title {
+        margin-bottom: 44px;
+        line-height: 1.1;
+        @include max-media($bk-d-1200){
+            margin-bottom: 30px;
+        }
+    }
+
+    .applica-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .applica-group {
+        &:not(:first-child) {
+            margin-top: 30px;
+            @include max-media($bk-576){
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .applica-f {
+        width: calc(50% - 15px);
+        @include max-media($bk-576){
+            width: 100%;
+        }
+        &:nth-child(1){
+            @include max-media($bk-576){
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .label {
+        @include fz-16;
+        font-weight: bold;
+    }
+
+    .f-control {
+        margin-top: 10px;
+        border-color: rgba($color: $b-cl, $alpha: .3);
+        background-color: #F7F7F7;
+        height: 60px;
+        border-radius: 10px;
+        padding: 15px 20px;
+        @include fz-16;
+        @include max-media($bk-d-1200){
+            height: 40px;
+            padding: 5px 20px;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: $main-cl;
+        }
+    }
+
+    .applica-file{
+        margin-top: 25px;
+    }
+
+    .file-box{
+        display: flex;
+        align-items: center;
+        &:nth-child(2){
+            margin-top: 30px;
+            @include max-media($bk-576){
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .file-f {
+        margin-left: 30px;
+        cursor: pointer;
+        padding: 4px 30px;
+        border: 1px solid rgba($color: $b-cl, $alpha: .3);
+        background-color: #F7F7F7;
+        border-radius: 10px;
+        flex-shrink: 0;
+        @include  max-media($bk-576){
+            padding: 4px 15px;
+            margin-left: 10px;
+        }
+
+        &:active {
+            background-color: #dddddd;
+        }
+
+
+        span{
+            @include fz-16;
+        }
+
+
+        input {
+            position: absolute;
+            top: -1000px;
+        }
+
+
+    }
+
+    .f-submit{
+        border-radius: 99px;
+        background-color: $main-cl-2;
+        color: $w-cl;
+        @include fz-16;
+        box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        // padding: 10px 30px 9px;
+        cursor: pointer;
+        width: 130px;
+        height: 40px;
+        margin-top: 30px;
+        text-transform: none;
+        @include max-media($bk-576){
+            margin-top: 20px;
+        }
         &:hover{
             background-color: $main-cl;
             letter-spacing: 1px;

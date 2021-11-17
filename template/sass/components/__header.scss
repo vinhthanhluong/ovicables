@@ -37,10 +37,11 @@
     &-inner {
         padding: 15px 0;
         display: flex;
-        //justify-content: flex-start;
         justify-content: space-between;
         align-items: center;
-        // color: $t-w-cl;
+        @include max-media($bk-576) {
+            padding: 10px 0;
+        }
     }
 }
 
@@ -52,13 +53,14 @@
         height: auto;
         -o-object-fit: cover;
         object-fit: cover;
+
+        @include max-media($bk-576) {
+            max-width: 90px;
+        }
     }
 }
 
 .header-search {
-    //margin: 0 15px 0 48px;
-    //flex-grow: 1;
-
     &-icon {
         display: none;
         color: rgba($color: $b-cl, $alpha: 0.4);
@@ -71,7 +73,7 @@
         background-color: $g-F8F8-cl;
         border-radius: 100%;
         transition: all .3s ease;
-        
+
 
         @include max-media($bk-768) {
             display: flex;
@@ -86,7 +88,7 @@
 
 }
 
-.header-act{
+.header-act {
     display: flex;
     align-items: center;
 }
@@ -96,7 +98,8 @@
     background-color: rgba($color: $main-cl, $alpha: .1);
     position: relative;
     margin-left: 8px;
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         margin-left: 10px;
     }
 
@@ -106,7 +109,7 @@
 
     .box-lang {
         font-weight: bold;
-       
+
         padding: 0 10px;
 
     }
@@ -126,7 +129,7 @@
         background-repeat: no-repeat;
         background-size: 8px;
         cursor: pointer;
-        
+
 
         li {
             display: flex;
@@ -161,10 +164,12 @@
             padding: 3px 5px;
             cursor: pointer;
             transition: all .3s ease;
-            &:hover{
+
+            &:hover {
                 color: $main-cl;
             }
-            span{
+
+            span {
                 padding-left: 7px;
             }
         }
@@ -443,7 +448,7 @@
         overflow-x: hidden;
         overflow-y: auto;
         height: 400px;
-        @include custom-scrollbar(3px,$main-cl)
+        @include custom-scrollbar(3px, $main-cl)
     }
 
     // li {
@@ -499,7 +504,7 @@
     }
 
     .current-menu {
-        > a {
+        >a {
             color: $main-cl-2;
             font-weight: bold;
 
@@ -509,8 +514,8 @@
 
         }
 
-        .current-menu{
-            > a{
+        .current-menu {
+            >a {
                 background-color: $main-cl;
                 color: $w-cl;
             }
