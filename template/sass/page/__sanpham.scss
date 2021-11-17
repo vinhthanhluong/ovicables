@@ -49,18 +49,18 @@
 
             .product-img {
                 padding: 30px;
-                height: calc(100% - 75px);
+                height: calc(100% - 77px);
                 display: flex;
                 align-items: center;
                 @include max-media($bk-d-1024){
-                    height: calc(100% - 65px);
+                    height: calc(100% - 66px);
                 }
                 @include max-media($bk-d-992){
-                    height: calc(100% - 61px);
+                    height: calc(100% - 62px);
                     padding: 20px;
                 }
                 @include max-media($bk-576){
-                    height: calc(100% - 51px);
+                    height: calc(100% - 52px);
                     padding: 20px 10px;
                 }
 
@@ -76,11 +76,15 @@
             .product-text {
                 // margin-top: auto;
                 background-color: $w-cl;
-                @include max-media($bk-d-768){
-                    min-height: 61px;
+                min-height: 77px;
+                @include max-media($bk-d-1024){
+                    min-height: 66px;
                 }
-                @include max-media($bk-d-768){
-                    min-height: 51px;
+                @include max-media($bk-d-992){
+                    min-height: 62px;
+                }
+                @include max-media($bk-576){
+                    min-height: 52px;
                 }
             }
 

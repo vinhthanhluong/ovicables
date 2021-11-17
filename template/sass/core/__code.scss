@@ -2,6 +2,11 @@
     color: $main-cl;
 }
 
+.main-cl-2 {
+    color: $main-cl-2;
+}
+
+
 .f-gg-sans {
     font-family: "Google Sans";
 }
@@ -54,10 +59,12 @@
         &.not-btn {
             .f-control {
                 padding: 12px 30px;
-                @include max-media($bk-d-1200){
+
+                @include max-media($bk-d-1200) {
                     padding: 12px 20px;
                 }
-                @include max-media($bk-992){
+
+                @include max-media($bk-992) {
                     padding: 12px 15px;
                 }
             }
@@ -73,7 +80,7 @@
                 padding: 12px 50px 12px 20px;
             }
 
-            @include max-media($bk-d-992){
+            @include max-media($bk-d-992) {
                 padding: 10px 45px 10px 15px;
             }
 
@@ -117,7 +124,8 @@
 
 .category {
     margin-top: 30px;
-    @include max-media($bk-d-1024){
+
+    @include max-media($bk-d-1024) {
         margin-top: 20px;
     }
 
@@ -125,7 +133,8 @@
         margin-bottom: 15px;
         display: flex;
         align-items: center;
-        @include max-media($bk-d-1024){
+
+        @include max-media($bk-d-1024) {
             margin-bottom: 10px;
         }
 
@@ -137,10 +146,12 @@
     .cate-box {
         &:not(:first-child) {
             margin-top: 45px;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-top: 30px;
             }
-            @include max-media($bk-d-1024){
+
+            @include max-media($bk-d-1024) {
                 margin-top: 20px;
             }
         }
@@ -148,7 +159,8 @@
 
     .cate-content {
         padding-left: 35px;
-        @include max-media($bk-d-1024){
+
+        @include max-media($bk-d-1024) {
             padding-left: 20px;
         }
     }
@@ -157,7 +169,8 @@
 
         &:not(:first-child) {
             margin-top: 20px;
-            @include max-media($bk-d-1024){
+
+            @include max-media($bk-d-1024) {
                 margin-top: 15px;
             }
         }
@@ -222,5 +235,82 @@
         transition: all .3s ease;
         color: $main-cl;
         @include line-clamp(2);
+    }
+}
+
+.box-form {
+    .bx-group {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        &:nth-child(2){
+            margin-top: 48px;
+        }
+        .bx-f {
+            width: calc(50% - 15px);
+        }
+
+        &:nth-child(1){
+            .bx-f{
+                &:nth-child(1){
+                    .f-control{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .f-control{
+        border: none;
+        border-bottom: 1px solid rgba($color: $b-cl, $alpha: .1);
+        border-radius: 0px;
+        padding: 6px 0 8px ;
+        height: 40px;
+        @include fz-16;
+        height: auto;
+
+        &::placeholder{
+            font-weight: normal;
+            color: rgba($color: $b-cl, $alpha: .4);
+            font-style: italic;
+        }
+
+        &:focus , &:hover{
+            border-color: $main-cl;
+        }
+    }
+
+    .bx-f {
+        width: 100%;
+        &.mt-60{
+            margin-top: 60px;
+        }
+    }
+
+    textarea.f-control{
+        resize: none;
+        height: 40px;
+    }
+    .bx-submit{
+        text-align: right;
+    }
+
+    .f-submit{
+        width: 140px;
+        height: 41px;
+        border-radius:  99px;
+        background-color: $main-cl-2;
+        color: $w-cl;
+        @include fz-16;
+        text-transform: none;
+        margin-top: 30px;
+        cursor: pointer;
+        box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        transition: all .3s ease;
+        &:hover{
+            background-color: $main-cl;
+            letter-spacing: 1px;
+        }
     }
 }

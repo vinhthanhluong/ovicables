@@ -1,0 +1,144 @@
+.customer-service {
+    overflow: hidden;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #EFF1F0;
+
+    .column {
+        &.service-tx {
+            width: calc(100% / 12 * 3);
+        }
+
+        &.service-bx {
+            width: calc(100% / 12 * 9);
+        }
+    }
+
+    .service-title {
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    .service-desc {
+        line-height: 1.1;
+    }
+
+    .service-cols {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+
+    .service-col {
+        width: calc(100% / 3);
+        padding: 15px;
+    }
+
+    .service-box {
+        padding: 30px;
+        text-align: center;
+        background-color: $w-cl;
+        box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        transition: all .3s ease;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: $main-cl;
+            color: $w-cl;
+
+            .service-img {
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        .service-img {
+            margin-bottom: 30px;
+
+            img {
+                transition: all .3s ease;
+                margin: 0 auto;
+            }
+        }
+
+        .service-tt {
+            margin-bottom: 14px;
+            line-height: 1.1;
+        }
+
+        .service-t {
+            line-height: 1.1;
+        }
+    }
+}
+
+.warranty-policy {
+    .policy-title {
+        margin-bottom: 30px;
+    }
+
+    .policy-item {
+        color: $w-cl;
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+
+        .policy-box{
+            &.active {
+                .policy-tt {
+                    border-radius: 10px 10px 0 0;
+                }
+            }
+        }
+
+        .policy-tt {
+            background-color: $main-cl-2;
+            padding: 19px 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            transition: all .3s ease;
+            cursor: pointer;
+            &::after{
+                content: '';
+                background-image: url('../img/svg/icon-plus.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+            }
+
+        }
+
+        .policy-content {
+            padding: 30px;
+            background-color: $w-cl;
+            box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+            border-radius: 0 0 10px 10px;
+            display: none;
+        }
+
+        .mona-content {
+            color: $b-cl;
+
+            p {
+                line-height: 1.1;
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+
+    }
+}

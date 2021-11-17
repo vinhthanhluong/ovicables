@@ -499,7 +499,7 @@
     }
 
     .current-menu {
-        a {
+        > a {
             color: $main-cl-2;
             font-weight: bold;
 
@@ -507,6 +507,13 @@
             //     width: calc(100% - 24px);
             // }
 
+        }
+
+        .current-menu{
+            > a{
+                background-color: $main-cl;
+                color: $w-cl;
+            }
         }
     }
 
