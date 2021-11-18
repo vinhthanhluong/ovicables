@@ -4,16 +4,30 @@
 
     .column {
         width: calc(100% / 4);
+
+        @include max-media($bk-d-1200) {
+            width: calc(100% / 2);
+        }
+
+        @include max-media($bk-576) {
+            width: 100%;
+        }
     }
 
     .achi-inner {
         display: flex;
         align-items: center;
+        height: 100%;
 
         .achi-img {}
 
         .achi-text {
             padding-left: 25px;
+
+            @include max-media($bk-d-1200) {
+                padding-left: 15px;
+                // text-align: center;
+            }
         }
 
         .achi-num {
@@ -45,27 +59,46 @@
         left: 0;
     }
 
-    .columns{
+    .columns {
         align-items: center;
     }
 
     .column {
         &.product-tx {
             width: 29%;
+            @include max-media($bk-d-992){
+                width: 35%;
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.product-li {
             width: 71%;
+            @include max-media($bk-d-992){
+                width: 65%;
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
     .product-inner {
         padding-left: 65px;
 
+        @include max-media($bk-d-1440) {
+            padding-left: 0px;
+        }
+
         .product-head-t {
             border-left: 2px solid $w-cl;
             padding-left: 10px;
             margin-bottom: 30px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 20px;
+            }
         }
 
         .product-label {
@@ -80,6 +113,9 @@
         .product-t {
             line-height: 1.1;
             margin-bottom: 15px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 10px;
+            }
         }
 
         .product-desc {
@@ -90,6 +126,9 @@
             position: relative;
             height: 30px;
             margin-top: 30px;
+            @include max-media($bk-d-1200){
+                margin-top: 20px;
+            }
 
             .swiper-button-next,
             .swiper-button-prev {
@@ -111,6 +150,15 @@
             .swiper-button-next {
                 right: auto;
                 left: 46px;
+                &::after{
+                    margin-left: 2px;
+                }
+            }
+
+            .swiper-button-prev {
+                &::after{
+                    margin-right: 2px;
+                }
             }
         }
 
@@ -120,14 +168,23 @@
     .swiper {
         margin: 0 -15px;
         // overflow: visible;
+        @include max-media($bk-d-1200) {
+            margin: 0 -7.5px;
+        }
     }
 
     .swiper-slide {
         overflow: hidden;
-        // width: calc(100% / 4);
         width: calc(100% / 3);
         max-width: 365px;
         padding: 0 15px;
+        @include max-media($bk-d-1200) {
+            padding: 7.5px;
+        }
+        @include max-media($bk-d-992){
+            width: calc(100% / 2);
+            max-width: 100%;
+        }
     }
 
     .product-slide {
@@ -165,6 +222,7 @@
                 left: 0;
                 transition: all .3s ease;
                 transform: translateY(-100%);
+                z-index: 1;
             }
 
             img {
@@ -180,146 +238,234 @@
             bottom: 0;
             left: 0;
             transform: translateY(100%);
+            z-index: 2;
+            @include max-media($bk-d-1200){
+                padding: 15px;
+            }
+            @include max-media($bk-576){
+                padding: 10px 8px;
+            }
         }
 
         .product-tt {
             margin-bottom: 8px;
             transition: all .3s ease;
-            &:hover{
+
+            &:hover {
                 color: $main-cl;
             }
         }
     }
 }
 
-.partners{
+.partners {
     background-color: $g-E2E2-cl;
-    .partners-title{
+    overflow: hidden;
+
+    .partners-title {
         color: $main-cl;
         margin-bottom: 30px;
     }
-    .partners-img{
+
+    .partners-img {
         background-color: $g-E2E2-cl;
-        img{
+
+        img {
             margin: 0 auto;
             height: 100%;
             object-fit: cover;
             mix-blend-mode: darken;
+            @include max-media($bk-576){
+                width: 100%;
+            }
         }
     }
 
-    .swiper-button-prev , .swiper-button-next{
+    .swiper-button-prev,
+    .swiper-button-next {
         width: 30px;
         height: 30px;
         border-radius: 100%;
         background-color: rgba($color: $b-cl, $alpha: .3);
         color: $w-cl;
-        display: none;
-        &::after{
+        @include hidden;
+        margin: 0;
+        transform: translateY(-50%);
+        @include max-media($bk-d-1200){
+            @include visible;
+        }
+        &::after {
             font-size: 12px;
             font-weight: normal;
         }
     }
 
-    .partners-top{
+    .partners-top {
         margin-bottom: 30px;
-        .swiper{
+
+        .swiper {
             margin: 0 -15px;
+            @include max-media($bk-d-992){
+                margin: 0 -7.5px;
+            }
         }
-        .swiper-slide{
+        .swiper-wrapper{
+            align-items: center;
+        }
+
+        .swiper-slide {
             width: calc(100% / 4);
             padding: 0 15px;
+            @include max-media($bk-d-992){
+                padding: 0 7.5px;
+            }
+            @include max-media($bk-d-768){
+                width: calc(100% / 3);
+            }
         }
     }
-    
-    .partners-bottom{
+
+    .partners-bottom {
         padding: 0 70px;
-        .swiper{
-            margin: 0 -15px;
+        @include max-media($bk-d-992){
+            padding: 0 50px;
         }
-        .swiper-slide{
+        @include max-media($bk-576){
+            padding: 0 15px;
+        }
+
+        .swiper {
+            margin: 0 -15px;
+            @include max-media($bk-d-992){
+                margin: 0 -7.5px;
+            }
+        }
+
+        .swiper-slide {
             width: calc(100% / 6);
             padding: 0 15px;
+            @include max-media($bk-d-1440){
+                width: calc(100% / 5);
+            }
+            @include max-media($bk-d-1200){
+                width: calc(100% / 4);
+            }
+            @include max-media($bk-d-992){
+                width: calc(100% / 3);
+                padding: 0 7.5px;
+            }
+            @include max-media($bk-d-768){
+                width: calc(100% / 2);
+            }
         }
     }
 }
 
-.news-activities{
+.news-activities {
+    overflow: hidden;
 
-    .column{
-       width: 50%;
+    .column {
+        width: 50%;
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
     }
 
 
-    .news-title{
+    .news-title {
         margin-bottom: 30px;
         color: $main-cl;
     }
 
-    .news-img{
+    .news-img {
         overflow: hidden;
         border-radius: 10px;
-        a{
+        height: 100%;
+
+        a {
             display: block;
             width: 100%;
+            height: 100%;
         }
-        img{
+
+        img {
             border-radius: 10px;
             transition: all .3s ease;
+            height: 100%;
         }
     }
 
-    .news-tt{
+    .news-tt {
         line-height: 1.1;
         margin-bottom: 10px;
         display: block;
         transition: all .3s ease;
-        &:hover{
+        @include line-clamp(2);
+        @include max-media($bk-d-992){
+            margin-bottom: 5px;
+        }
+        @include max-media($bk-576){
+            @include line-clamp(1);
+        }
+
+        &:hover {
             color: $main-cl;
         }
     }
 
-    .news-desc{
+    .news-desc {
         line-height: 1.2;
         margin-bottom: 10px;
+        @include line-clamp(3);
+        @include max-media($bk-d-992){
+            margin-bottom: 5px;
+        }
     }
 
-    .news-ft{
+    .news-ft {
         display: flex;
         align-items: center;
     }
 
-    .news-date{
+    .news-date {
         display: flex;
         align-items: center;
-        span{
+
+        span {
             padding-left: 9px;
         }
     }
 
-    .news-t{
+    .news-t {
         border-left: 1px solid #CBCBCB;
         margin-left: 14px;
         padding-left: 14px;
     }
 
-    .news-main{
+    .news-main {
         border-radius: 10px;
         overflow: hidden;
         position: relative;
+        height: 100%;
 
-        .news-content{
+        .news-content {
             padding: 30px;
             position: absolute;
             bottom: 0;
             left: 0;
             color: $w-cl;
             background-color: rgba($color: $main-cl-2, $alpha: .8);
+            @include max-media($bk-d-1200){
+                padding: 20px;
+            }
+            @include max-media($bk-d-992){
+                padding: 15px;
+            }
         }
 
-        .news-ft{
-            .news-date{
-                img{
+        .news-ft {
+            .news-date {
+                img {
                     filter: brightness(0) invert(1);
                 }
             }
@@ -327,33 +473,60 @@
 
     }
 
-    .news-item{
+    .news-item {
         display: flex;
         align-items: center;
-        &:not(:first-child){
+
+        &:not(:first-child) {
             margin-top: 30px;
+            @include max-media($bk-d-1200){
+                margin-top: 15px;
+            }
         }
 
-        &:hover{
-            .news-tt{
+        &:hover {
+            .news-tt {
                 color: $main-cl;
             }
 
-            .news-img{
-                img{
+            .news-img {
+                img {
                     transform: scale(1.1);
                 }
             }
         }
 
-        .news-img{
+        .news-img {
             width: 170px;
             height: 170px;
+            @include max-media($bk-d-1200){
+                width: 150px;
+                height: 150px;
+            }
+            @include max-media($bk-d-992){
+                width: 120px;
+                height: 120px;
+            }
+            @include max-media($bk-576){
+                width: 100px;
+                height: 100px;
+            }
 
         }
-        .news-content{
+
+        .news-content {
             padding-left: 30px;
             width: calc(100% - 170px);
+            @include max-media($bk-d-1200){
+                padding-left: 15px;
+                width: calc(100% - 150px);
+            }
+            @include max-media($bk-d-992){
+                width: calc(100% - 120px);
+            }
+            @include max-media($bk-576){
+                width: calc(100% - 100px);
+            }
         }
     }
 }

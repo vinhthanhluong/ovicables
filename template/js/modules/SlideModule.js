@@ -62,13 +62,15 @@ export default function SlideModule(){
         const prevBtn = el.querySelector('.swiper-button-prev');
         const nextBtn = el.querySelector('.swiper-button-next');
 
-        const sliders = el.querySelector('.notslide');
+        const notslide = el.querySelector('.notslide');
         
-        if(sliders){
+        if(notslide){
             var notSlide = false;
         }else{
             var notSlide = true;
         }
+
+        
         
         try {
             new Swiper(slider, {

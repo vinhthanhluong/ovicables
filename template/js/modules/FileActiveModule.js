@@ -10,6 +10,12 @@ export default function FileActiveModule() {
             $(this).parent('.policy-box').toggleClass('active');
             $(this).next('.policy-content').slideToggle();
         });
-        
+    }
+
+    const width = $(window).width();
+    if (width < 1200) {
+        $('.partners .swiper').removeClass('notslide');
+    }else{
+        $('.partners .swiper').addClass('notslide');
     }
 }

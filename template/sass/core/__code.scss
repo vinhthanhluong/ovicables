@@ -262,7 +262,9 @@
             }
 
             &:nth-child(1){
-                margin-bottom: 20px;
+                @include max-media($bk-576){
+                    margin-bottom: 20px;
+                }
             }
         }
 

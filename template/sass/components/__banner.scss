@@ -18,11 +18,17 @@
 		border-radius: 100%;
 		outline: none;
 		background-color: rgba($color: #C4C4C4, $alpha: .5);
-
+		@include max-media($bk-d-768){
+			width: 40px;
+			height: 40px;
+		}
 		&::after{
 			font-size: 18px;
 			font-weight: bold;
 			color: $b-cl;
+			@include max-media($bk-d-768){
+				font-size: 14px;
+			}
 		}
 	}
 
@@ -38,7 +44,6 @@
 	}
 
 	color: $w-cl;
-	
 
 	.banner-inner{
 		background-position: center;
@@ -46,6 +51,15 @@
 		background-size: cover;
 		padding: 143px 0 113px;
 		position: relative;
+		@include max-media($bk-d-1200){
+			padding: 90px 0;
+		}
+		@include max-media($bk-d-992){
+			padding: 60px 0;
+		}
+		@include max-media($bk-768){
+			padding: 50px 0;
+		}
 		&::before{
 			content: '';
 			width: 50%;
@@ -54,24 +68,52 @@
 			top: 0;
 			left: 0;
 			background: linear-gradient(89.82deg, #000000 0.17%, rgba(0, 0, 0, 0) 99.86%);
+			@include max-media($bk-d-1200){
+				width: 100%;
+				
+			}
 		}
 		.banner-box{
 			z-index: 1;
 			position: relative;
 			max-width: 470px;
+			@include max-media($bk-d-1200){
+				max-width: 550px;
+			}
+			@include max-media($bk-d-992){
+				max-width: 500px;
+			}
+			@include max-media($bk-d-768){
+				max-width: 100%;
+			}
 		}
 		.banner-title{
 			margin-bottom: 60px;
 			line-height: 1.15;
+			@include max-media($bk-d-1200){
+				margin-bottom: 30px;
+			}
+			@include max-media($bk-576){
+				margin-bottom: 15px;
+			}
 		}
 
 		.banner-call{
 			margin-bottom: 50px;
+			@include max-media($bk-d-1200){
+				margin-bottom: 30px;
+			}
+			@include max-media($bk-576){
+				margin-bottom: 20px;
+			}
 		}
 
 		.banner-tt{
 			margin-bottom: 11px;
 			line-height: 1.1;
+			@include max-media($bk-576){
+				margin-bottom: 7px;
+			}
 		}
 
 		.banner-number{
@@ -95,6 +137,10 @@
 			font-weight: bold;
 			transition: all .3s ease;
 			border: 1px solid $main-cl-2;
+			@include max-media($bk-d-768){
+				height: 40px;
+				width: 160px;
+			}
 			&:hover{
 				box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
 				img{
