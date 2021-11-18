@@ -164,23 +164,31 @@ export default function SlideModule() {
                 autoHeight: true,
                 // mousewheel: true,
                 watchSlidesProgress: true,
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
+                // observer: true,
+                // observeParents: true,
+                // observeSlideChildren: true,
+
+                // grabCursor: true,
+                // effect: "creative",
+                // creativeEffect: {
+                //     prev: {
+                //         shadow: true,
+                //         translate: ["-20%", 0, -1],
+                //     },
+                //     next: {
+                //         translate: ["100%", 0, 0],
+                //     },
+                // },
 
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: SliderPagination,
                     clickable: true,
                 },
 
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: sliderNextBtn,
+                    prevEl: sliderPrevBtn,
                 },
-                
-
-              
-               
 
                 breakpoints: {
                     // 320: {
@@ -198,6 +206,8 @@ export default function SlideModule() {
                 // observeSlideChildren: true,
                 // observer: true,
             })
+
+            swiper.slideTo(1);
         }
         catch (err) {
             console.log(err)
