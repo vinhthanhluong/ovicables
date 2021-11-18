@@ -11,9 +11,11 @@ export default function WowModule() {
             boxClass: 'wow',      // default
             animateClass: 'animated', // default
             offset: 0,          // default
-            mobile:false,
+            // mobile:false,
             live: false,       // default
-          
+            mobile: function () {
+                return $(window).width() < 768;
+            },
         }
     )
     wow.init();

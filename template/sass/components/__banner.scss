@@ -1,167 +1,202 @@
 .banners {
-	.swiper-wrapper {
-		margin: 0;
-	}
-	.swiper-slide {
-		padding: 0;
-		height: 100%;
-	}
-	.swiper-slide > img {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-	}
+    .swiper-wrapper {
+        margin: 0;
+    }
 
-	.swiper-button-prev , .swiper-button-next{
-		width: 50px;
-		height: 50px;
-		border-radius: 100%;
-		outline: none;
-		background-color: rgba($color: #C4C4C4, $alpha: .5);
-		@include max-media($bk-d-768){
-			width: 40px;
-			height: 40px;
-		}
-		&::after{
-			font-size: 18px;
-			font-weight: bold;
-			color: $b-cl;
-			@include max-media($bk-d-768){
-				font-size: 14px;
-			}
-		}
-	}
+    .swiper-slide {
+        padding: 0;
+        height: 100%;
+    }
 
-	.swiper-button-prev {
-		left: 30px;
-	}
-	.swiper-button-next {
-		right: 30px;
-	}
-	.swiper-pagination {
-		position: absolute;
-		bottom: 0;
-	}
+    .swiper-slide>img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 
-	color: $w-cl;
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        outline: none;
+        background-color: rgba($color: #C4C4C4, $alpha: .5);
 
-	.banner-inner{
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		padding: 143px 0 113px;
-		position: relative;
-		@include max-media($bk-d-1200){
-			padding: 90px 0;
-		}
-		@include max-media($bk-d-992){
-			padding: 60px 0;
-		}
-		@include max-media($bk-768){
-			padding: 50px 0;
-		}
-		&::before{
-			content: '';
-			width: 50%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background: linear-gradient(89.82deg, #000000 0.17%, rgba(0, 0, 0, 0) 99.86%);
-			@include max-media($bk-d-1200){
-				width: 100%;
-				
-			}
-		}
-		.banner-box{
-			z-index: 1;
-			position: relative;
-			max-width: 470px;
-			@include max-media($bk-d-1200){
-				max-width: 550px;
-			}
-			@include max-media($bk-d-992){
-				max-width: 500px;
-			}
-			@include max-media($bk-d-768){
-				max-width: 100%;
-			}
-		}
-		.banner-title{
-			margin-bottom: 60px;
-			line-height: 1.15;
-			@include max-media($bk-d-1200){
-				margin-bottom: 30px;
-			}
-			@include max-media($bk-576){
-				margin-bottom: 15px;
-			}
-		}
+        @include max-media($bk-d-768) {
+            width: 40px;
+            height: 40px;
+        }
 
-		.banner-call{
-			margin-bottom: 50px;
-			@include max-media($bk-d-1200){
-				margin-bottom: 30px;
-			}
-			@include max-media($bk-576){
-				margin-bottom: 20px;
-			}
-		}
+        &::after {
+            font-size: 18px;
+            font-weight: bold;
+            color: $b-cl;
 
-		.banner-tt{
-			margin-bottom: 11px;
-			line-height: 1.1;
-			@include max-media($bk-576){
-				margin-bottom: 7px;
-			}
-		}
+            @include max-media($bk-d-768) {
+                font-size: 14px;
+            }
+        }
+    }
 
-		.banner-number{
-			display: block;
-			line-height: 1.1;
-			transition: all .3s ease;
-			&:hover{
-				color: $main-cl-2;
-			}
-		}
+    .swiper-button-prev {
+        left: 30px;
+    }
 
-		.banner-more{
-			background-color: $main-cl-2;
-			border-radius: 99px;
-			width: 175px;
-			height: 46px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			@include fz-18;
-			font-weight: bold;
-			transition: all .3s ease;
-			border: 1px solid $main-cl-2;
-			@include max-media($bk-d-768){
-				height: 40px;
-				width: 160px;
-			}
-			&:hover{
-				box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
-				img{
-					transform: translateX(7px);
-				}
-			}
+    .swiper-button-next {
+        right: 30px;
+    }
 
-			img{
-				padding-left: 4px;
-				transition: all .3s ease;
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+    }
 
-			}
+    color: $w-cl;
 
-		}
+    .banner-inner {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 143px 0 113px;
+        position: relative;
 
-	}
+        @include max-media($bk-d-1200) {
+            padding: 90px 0;
+        }
 
-	&.banners-page{
-		background-color: $main-cl;
-		color: $w-cl;
-	}
+        @include max-media($bk-d-992) {
+            padding: 60px 0;
+        }
+
+        @include max-media($bk-768) {
+            padding: 50px 0;
+        }
+
+        &::before {
+            content: '';
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(89.82deg, #000000 0.17%, rgba(0, 0, 0, 0) 99.86%);
+
+            @include max-media($bk-d-1200) {
+                width: 100%;
+
+            }
+        }
+
+        .banner-box {
+            z-index: 1;
+            position: relative;
+            max-width: 470px;
+
+            @include max-media($bk-d-1200) {
+                max-width: 550px;
+            }
+
+            @include max-media($bk-d-992) {
+                max-width: 500px;
+            }
+
+            @include max-media($bk-d-768) {
+                max-width: 100%;
+            }
+        }
+
+        .banner-title {
+            margin-bottom: 60px;
+            line-height: 1.15;
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 30px;
+            }
+
+            @include max-media($bk-576) {
+                margin-bottom: 15px;
+            }
+        }
+
+        .banner-call {
+            margin-bottom: 50px;
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 30px;
+            }
+
+            @include max-media($bk-576) {
+                margin-bottom: 20px;
+            }
+        }
+
+        .banner-tt {
+            margin-bottom: 11px;
+            line-height: 1.1;
+
+            @include max-media($bk-576) {
+                margin-bottom: 7px;
+            }
+        }
+
+        .banner-number {
+            display: block;
+            line-height: 1.1;
+            transition: all .3s ease;
+
+            &:hover {
+                color: $main-cl-2;
+            }
+        }
+
+        .banner-more {
+            background-color: $main-cl-2;
+            border-radius: 99px;
+            width: 175px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include fz-18;
+            font-weight: bold;
+            transition: all .3s ease;
+            border: 1px solid $main-cl-2;
+
+            @include max-media($bk-d-768) {
+                height: 40px;
+                width: 160px;
+            }
+
+            &:hover {
+                box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
+
+                img {
+                    transform: translateX(7px);
+                }
+            }
+
+            img {
+                padding-left: 4px;
+                transition: all .3s ease;
+
+            }
+
+        }
+
+    }
+
+    &.banners-page {
+        background-color: $main-cl;
+        color: $w-cl;
+
+        .banner-title {
+            animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
+            @include max-media($bk-d-768) {
+                animation: none;
+            }
+        }
+    }
 
 
 }

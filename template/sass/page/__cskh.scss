@@ -112,6 +112,7 @@
 }
 
 .warranty-policy {
+    overflow: hidden;
     .policy-title {
         margin-bottom: 30px;
         @include max-media($bk-d-992){
