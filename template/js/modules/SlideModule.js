@@ -1,60 +1,4 @@
 export default function SlideModule() {
-    function slide() {
-        let width = $(window).width();
-        //console.log(width);
-        if (width <= 1200 && document.querySelector('#slide-home')) {
-            const swiper = document.querySelector('#slide-home');
-            const sliderContainer = swiper.querySelector('.swiper');
-            const SliderPagination = swiper.querySelector('.swiper-pagination-orange');
-            const sliderPrevBtn = swiper.querySelector('.swiper-prev');
-            const sliderNextBtn = swiper.querySelector('.swiper-next');
-            try {
-                const swiper = new Swiper(sliderContainer, {
-                    speed: 1000,
-                    loop: true,
-                    // autoHeight: true,
-                    //spaceBetween: 20,
-                    slidesPerView: 1,
-                    autoplay: {
-                        delay: 4000,
-                    },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-
-                    // navigation: {
-                    //     nextEl: '.swiper-button-next',
-                    //     prevEl: '.swiper-button-prev',
-                    // },
-
-                    breakpoints: {
-                        // 320: {
-                        //     spaceBetween: 50
-                        // },
-                        // 480: {
-                        //     spaceBetween: 30
-                        // },
-                        // 576: {
-                        //     spaceBetween: 0,
-
-                        // }
-                    }
-                    // observeParents:true,
-                    // observeSlideChildren: true,
-                    // observer: true,
-                })
-            }
-            catch (err) {
-                console.log(err)
-            }
-
-        }
-    }
-
-    $(window).on("resize", function () {
-        slide;
-    });
 
     document.querySelectorAll('.swiper-custom').forEach(el => {
         const slider = el.querySelector('.swiper');
@@ -162,24 +106,8 @@ export default function SlideModule() {
                 loop: true,
                 slidesPerView: 'auto',
                 autoHeight: true,
-                // mousewheel: true,
-                watchSlidesProgress: true,
-                // observer: true,
-                // observeParents: true,
-                // observeSlideChildren: true,
-
-                // grabCursor: true,
-                // effect: "creative",
-                // creativeEffect: {
-                //     prev: {
-                //         shadow: true,
-                //         translate: ["-20%", 0, -1],
-                //     },
-                //     next: {
-                //         translate: ["100%", 0, 0],
-                //     },
-                // },
-
+                mousewheel: true,
+               
                 pagination: {
                     el: SliderPagination,
                     clickable: true,
@@ -189,75 +117,12 @@ export default function SlideModule() {
                     nextEl: sliderNextBtn,
                     prevEl: sliderPrevBtn,
                 },
-
-                breakpoints: {
-                    // 320: {
-                    //     spaceBetween: 50
-                    // },
-                    // 480: {
-                    //     spaceBetween: 30
-                    // },
-                    // 576: {
-                    //     spaceBetween: 0,
-
-                    // }
-                }
-                // observeParents:true,
-                // observeSlideChildren: true,
-                // observer: true,
-            })
-
-            swiper.slideTo(1);
-        }
-        catch (err) {
-            console.log(err)
-        }
-    }
-
-    if (document.querySelector('.swiper-demo')) {
-        const swiper = document.querySelector('.swiper-demo');
-        const sliderContainer = swiper.querySelector('.swiper');
-        const SliderPagination = swiper.querySelector('.swiper-pagination');
-        const sliderPrevBtn = swiper.querySelector('.swiper-button-prev');
-        const sliderNextBtn = swiper.querySelector('.swiper-button-next');
-        try {
-            const swiper = new Swiper(sliderContainer, {
-                speed: 1000,
-                loop: true,
-                spaceBetween: 20,
-                slidesPerView: 2,
-                // autoplay: {
-                //     delay: 4000,
-                // },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-
-                breakpoints: {
-                    // 320: {
-                    //     spaceBetween: 50
-                    // },
-                    // 480: {
-                    //     spaceBetween: 30
-                    // },
-                    // 576: {
-                    //     spaceBetween: 0,
-
-                    // }
-                }
-                // observeParents:true,
-                // observeSlideChildren: true,
-                // observer: true,
             })
         }
         catch (err) {
             console.log(err)
         }
     }
+
+   
 }
