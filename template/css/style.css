@@ -715,6 +715,42 @@ sup {
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .main-cl {
   color: #0C7283;
 }
@@ -2936,6 +2972,22 @@ sup {
   position: absolute;
   bottom: 0;
 }
+.banners .swiper-slide-active .banner-inner .banner-title {
+  animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@media screen and (max-width: 767px) {
+  .banners .swiper-slide-active .banner-inner .banner-title {
+    animation: none;
+  }
+}
+.banners .swiper-slide-active .banner-inner .banner-more {
+  animation: slide-in-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@media screen and (max-width: 767px) {
+  .banners .swiper-slide-active .banner-inner .banner-more {
+    animation: none;
+  }
+}
 .banners .banner-inner {
   background-position: center;
   background-repeat: no-repeat;
@@ -4047,6 +4099,7 @@ html .mfp-wrap {
 .slide-type {
   color: #fff;
   position: relative;
+  overflow: hidden;
 }
 .slide-type .container-full {
   padding: 0;
@@ -4118,6 +4171,30 @@ html .mfp-wrap {
 }
 .slide-type .swiper-button-next::after {
   margin-left: 2px;
+}
+.slide-type .swiper-slide-active .slide-head-t {
+  animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@media screen and (max-width: 767px) {
+  .slide-type .swiper-slide-active .slide-head-t {
+    animation: none;
+  }
+}
+.slide-type .swiper-slide-active .slide-desc {
+  animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@media screen and (max-width: 767px) {
+  .slide-type .swiper-slide-active .slide-desc {
+    animation: none;
+  }
+}
+.slide-type .swiper-slide-active .slide-info {
+  animation: slide-in-bottom 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@media screen and (max-width: 767px) {
+  .slide-type .swiper-slide-active .slide-info {
+    animation: none;
+  }
 }
 .slide-type .swiper-slide {
   width: 15%;

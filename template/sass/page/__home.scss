@@ -574,6 +574,7 @@
 .slide-type {
     color: $w-cl;
     position: relative;
+    overflow: hidden;
 
     .container-full {
         padding: 0;
@@ -644,6 +645,29 @@
 
         &::after {
             margin-left: 2px;
+        }
+    }
+
+    .swiper-slide-active{
+        .slide-head-t{
+            animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            @include max-media($bk-d-768){
+                animation: none;
+            }
+        }
+
+        .slide-desc{
+            animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            @include max-media($bk-d-768){
+                animation: none;
+            }
+        }
+
+        .slide-info{
+            animation: slide-in-bottom 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            @include max-media($bk-d-768){
+                animation: none;
+            }
         }
     }
 

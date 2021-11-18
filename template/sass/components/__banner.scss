@@ -53,6 +53,32 @@
 
     color: $w-cl;
 
+
+    .swiper-slide-active {
+        .banner-inner {
+            .banner-title {
+                animation: slide-in-right  0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                @include max-media($bk-d-768){
+                    animation: none;
+                }
+            }
+
+            // .banner-call{
+            //     animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            //     @include max-media($bk-d-768){
+            //         animation: none;
+            //     }
+            // }
+
+            .banner-more{
+                animation: slide-in-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                @include max-media($bk-d-768){
+                    animation: none;
+                }
+            }
+        }
+    }
+
     .banner-inner {
         background-position: center;
         background-repeat: no-repeat;
@@ -109,6 +135,7 @@
             margin-bottom: 60px;
             line-height: 1.15;
 
+            // animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             @include max-media($bk-d-1200) {
                 margin-bottom: 30px;
             }
