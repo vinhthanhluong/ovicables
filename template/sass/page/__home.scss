@@ -10,7 +10,7 @@
         }
 
         @include max-media($bk-576) {
-            width: 100%;
+            // width: 100%;
         }
     }
 
@@ -18,6 +18,9 @@
         display: flex;
         align-items: center;
         height: 100%;
+        @include max-media($bk-576){
+            flex-direction: column;
+        }
 
         .achi-img {}
 
@@ -26,7 +29,11 @@
 
             @include max-media($bk-d-1200) {
                 padding-left: 15px;
-                // text-align: center;
+            }
+            @include max-media($bk-576){
+                text-align: center;
+                padding-left: 0;
+                padding-top: 5px;
             }
         }
 
@@ -626,8 +633,9 @@
             bottom: 30px;
         }
         @include max-media($bk-d-768){
-            width: 100px;
-            bottom: 20px;
+            // width: 100px;
+            // bottom: 20px;
+            display: none;
         }
     }
 
@@ -688,14 +696,14 @@
         @include max-media($bk-d-992){
             height: 400px;
         }
-        @include max-media($bk-576){
+        @include max-media($bk-d-768){
             width: 100%;
         }
       
 
         &.swiper-slide-active {
             width: 70% !important;
-            @include max-media($bk-576){
+            @include max-media($bk-d-768){
                 width: 100% !important;
             }
             .slide-inner {

@@ -18,4 +18,15 @@ export default function FileActiveModule() {
     }else{
         $('.partners .swiper').addClass('notslide');
     }
+
+    const $width = $(window).width();
+
+    if ($('.customer-ig').length && $width >= 768) {
+        $('.customer-ig').on('mouseover', function () {
+            $(this).addClass('active');
+        });
+        $('.customer-ig').on('mouseout', function () {
+            $(this).removeClass('active');
+        });
+    }
 }

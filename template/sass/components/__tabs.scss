@@ -8,6 +8,7 @@
         padding: 10px 20px;
         cursor: pointer;
         position: relative;
+        transition: all .3s ease;
         &.active {
             color: red;
         }

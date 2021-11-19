@@ -10,6 +10,9 @@
         align-items: center;
         border-bottom: 1px solid $main-cl;
         padding: 10px 0;
+        @include max-media($bk-576){
+            padding: 5px 0;
+        }
 
         @include max-media($bk-576) {
             overflow-x: scroll;

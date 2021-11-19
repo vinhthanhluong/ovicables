@@ -106,8 +106,12 @@ export default function SlideModule() {
                 loop: true,
                 slidesPerView: 'auto',
                 autoHeight: true,
-                mousewheel: true,
-               
+                // mousewheel: true,
+                // allowTouchMove: false,
+                autoplay: {
+                    delay: 4000,
+                },
+
                 pagination: {
                     el: SliderPagination,
                     clickable: true,
@@ -117,6 +121,17 @@ export default function SlideModule() {
                     nextEl: sliderNextBtn,
                     prevEl: sliderPrevBtn,
                 },
+
+                // breakpoints: {
+                //     320: {
+                     
+                //         allowTouchMove: false,
+                //     },
+
+                //     768: {
+                //         allowTouchMove: false,
+                //     }
+                // }
             })
         }
         catch (err) {
@@ -124,5 +139,5 @@ export default function SlideModule() {
         }
     }
 
-   
+
 }

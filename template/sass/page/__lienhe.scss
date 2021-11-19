@@ -13,9 +13,16 @@
             border-bottom: 1px solid $g-C4C4-cl;
             padding-bottom: 10px;
             @include max-media($bk-576){
-                background-color: rgba($color: $main-cl, $alpha: .1);
-                border-bottom: 0;
+                // background-color: rgba($color: $main-cl, $alpha: .1);
+                // border-bottom: 0;
+                display: flex;
+                padding: 0;
+                padding-bottom: 10px;
             }
+        }
+
+        .tab-link-mobi{
+            display: none;
         }
 
         .tab-title {
@@ -25,12 +32,14 @@
             border-radius: 99px;
             @include max-media($bk-576){
                 padding: 10px 20px 9px;
-
             }
             &.active {
                 font-weight: bold;
                 color: $w-cl;
                 background-color: $main-cl;
+                @include max-media($bk-d-768){
+                    font-weight: normal;
+                }
             }
         }
 

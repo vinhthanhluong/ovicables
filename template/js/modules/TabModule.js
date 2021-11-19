@@ -46,9 +46,23 @@ export default function TabModule() {
                 pane.classList.add('active');
             }
         })
+    }
 
-      
-        
+
+    const tabs_cus = $$('.cus-tab-title');
+    const panes_cus = $$('.cus-tab-content');
+
+    if (tabs_cus) {
+        tabs_cus.forEach((tab, index) => {
+            const pane = panes_cus[index];
+            tab.onmouseover = function () {
+                $('.cus-tab-title.active').classList.remove('active');
+                $('.cus-tab-content.active').classList.remove('active');
+
+                this.classList.add('active');
+                pane.classList.add('active');
+            }
+        })
     }
 
  
