@@ -816,10 +816,12 @@
 
             .ig-rote-wrap {
                 animation: rotate-in-center 2s linear both;
+                transition: all 2s ease;
             }
 
             .ig-rote-wap {
                 animation: rotate-in-center-2 2.5s linear both;
+                transition: all 2.5s ease;
             }
 
         }

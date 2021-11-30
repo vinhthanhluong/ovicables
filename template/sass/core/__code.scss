@@ -260,6 +260,7 @@
 
         .bx-f {
             width: calc(50% - 15px);
+            position: relative;
             @include max-media($bk-576){
                 width: 100%;
             }
@@ -268,6 +269,30 @@
                 @include max-media($bk-576){
                     margin-bottom: 20px;
                 }
+            }
+
+            &.active{
+                label{
+                    font-size: 10px;
+                    top: 8px;
+                    color: #BF202F;
+                    // transform: translateY(0);
+                }
+                .f-control{
+                    padding: 20px 0 5px;
+                }
+            }
+
+            label{
+                left: 0;
+                top: 50%;
+                position: absolute;
+                line-height: 1;
+                font-style: italic;
+                transform: translateY(-50%);
+                color: rgba($color: $b-cl, $alpha: .4);
+                pointer-events: none;
+                transition: 0.2s linear;
             }
         }
 
@@ -289,7 +314,9 @@
         padding: 6px 0 8px;
         height: 40px;
         @include fz-16;
-        height: auto;
+        font-weight: bold;
+        // height: auto;
+        // background-color: wheat;
 
         &::placeholder {
             font-weight: normal;
@@ -317,6 +344,7 @@
     textarea.f-control {
         resize: none;
         height: 40px;
+        font-weight: normal;
     }
 
     .bx-submit {
@@ -461,8 +489,10 @@
             position: absolute;
             top: -1000px;
         }
+    }
 
-
+    .file-text{
+        margin-left: 10px;
     }
 
     .f-submit{

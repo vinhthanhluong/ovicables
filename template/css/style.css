@@ -990,6 +990,7 @@ sup {
 }
 .box-form .bx-group .bx-f {
   width: calc(50% - 15px);
+  position: relative;
 }
 @media screen and (max-width: 576px) {
   .box-form .bx-group .bx-f {
@@ -1001,6 +1002,25 @@ sup {
     margin-bottom: 20px;
   }
 }
+.box-form .bx-group .bx-f.active label {
+  font-size: 10px;
+  top: 8px;
+  color: #BF202F;
+}
+.box-form .bx-group .bx-f.active .f-control {
+  padding: 20px 0 5px;
+}
+.box-form .bx-group .bx-f label {
+  left: 0;
+  top: 50%;
+  position: absolute;
+  line-height: 1;
+  font-style: italic;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  transition: 0.2s linear;
+}
 .box-form .bx-group:nth-child(1) .bx-f:nth-child(1) .f-control {
   font-weight: bold;
 }
@@ -1011,7 +1031,7 @@ sup {
   padding: 6px 0 8px;
   height: 40px;
   font-size: 16px;
-  height: auto;
+  font-weight: bold;
 }
 @media screen and (max-width: 991px) {
   .box-form .f-control {
@@ -1040,6 +1060,7 @@ sup {
 .box-form textarea.f-control {
   resize: none;
   height: 40px;
+  font-weight: normal;
 }
 .box-form .bx-submit {
   text-align: right;
@@ -1195,6 +1216,9 @@ sup {
 .block-cv .file-f input {
   position: absolute;
   top: -1000px;
+}
+.block-cv .file-text {
+  margin-left: 10px;
 }
 .block-cv .f-submit {
   border-radius: 99px;
@@ -5800,9 +5824,11 @@ html .mfp-wrap {
 }
 .customer-say .customer-ig.active .ig-rote-wrap {
   animation: rotate-in-center 2s linear both;
+  transition: all 2s ease;
 }
 .customer-say .customer-ig.active .ig-rote-wap {
   animation: rotate-in-center-2 2.5s linear both;
+  transition: all 2.5s ease;
 }
 .customer-say .ig-box-wrap {
   border-radius: 100%;
