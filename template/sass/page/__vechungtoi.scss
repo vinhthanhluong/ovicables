@@ -134,168 +134,15 @@
     }
 }
 
-// .staff {
-//     overflow: hidden;
-
-//     .columns {
-//         align-items: center;
-
-//         @include max-media($bk-d-768) {
-//             // flex-direction: column-reverse;
-//         }
-//     }
-
-//     .column {
-//         &.staff-tx {
-//             width: calc(100% / 12 * 5);
-
-//             @include max-media($bk-d-768) {
-//                 width: 100%;
-//             }
-//         }
-
-//         &.staff-ig {
-//             width: calc(100% / 12 * 7);
-
-//             @include max-media($bk-d-768) {
-//                 width: 100%;
-//             }
-//         }
-//     }
-
-//     .staff-head-t {
-//         margin-bottom: 30px;
-//         border-left: 2px solid $b-cl;
-//         border-radius: 2px;
-//         padding-left: 12px;
-
-//         @include max-media($bk-d-1200) {
-//             margin-bottom: 20px;
-//         }
-
-//         @include max-media($bk-d-992) {
-//             margin-bottom: 15px;
-//         }
-
-//     }
-
-//     .staff-label {
-//         margin-bottom: 8px;
-//         line-height: 1.1;
-//     }
-
-//     .staff-tt {
-//         line-height: 1.1;
-//     }
-
-//     .staff-t {
-//         margin-bottom: 15px;
-
-//         @include max-media($bk-d-1200) {
-//             margin-bottom: 10px;
-//         }
-
-//         @include max-media($bk-d-992) {
-//             margin-bottom: 5px;
-//         }
-//     }
-
-//     .staff-desc {
-//         line-height: 1.5;
-//     }
-
-//     .staff-arrow {
-//         position: relative;
-//         height: 30px;
-//         margin-top: 30px;
-
-//         @include max-media($bk-d-1200) {
-//             margin-top: 20px;
-//         }
-
-//         @include max-media($bk-d-1200) {
-//             margin-top: 15px;
-//         }
-//     }
-
-//     .swiper-button-next,
-//     .swiper-button-prev {
-//         width: 30px;
-//         height: 30px;
-//         border-radius: 100%;
-//         border: 1px solid $b-cl;
-//         margin: 0;
-//         top: 0%;
-
-//         &::after {
-//             font-size: 14px;
-//             color: $b-cl;
-
-//         }
-//     }
-
-//     .swiper-button-next {
-//         right: auto;
-//         left: 46px;
-//     }
-
-//     .swiper-button-prev {
-//         left: 0;
-//     }
-
-//     .swiper-slide {
-//         width: 100%;
-//         border-radius: 10px;
-
-//     }
-
-//     .staff-slide {
-//         width: 759px;
-//         border-radius: 10px;
-//         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
-
-//         @include max-media($bk-d-1440) {
-//             width: auto;
-//         }
-
-//         .swiper {
-//             @include max-media($bk-d-992) {
-//                 border-radius: 10px;
-//             }
-//         }
-
-//     }
-
-//     .staff-img {
-//         border-radius: 10px;
-
-//         img {
-//             width: 100%;
-//             height: 100%;
-//             max-width: 100%;
-//             object-fit: cover;
-//             border-radius: 10px;
-//         }
-
-//     }
-
-
-// }
-
 .staff {
     overflow: hidden;
 
     .staff-wrapper {
         position: relative;
-        // width: calc(100% + 85px);
     }
 
     .columns {
         align-items: center;
-
-        @include max-media($bk-d-768) {
-            // flex-direction: column-reverse;
-        }
     }
 
     .column {
@@ -316,42 +163,19 @@
         }
     }
 
-    .staff-inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateY(100%);
-
-        // z-index: -1;
-        @include max-media($bk-d-1200) {
-            transform: translateY(00%);
-        }
-
-        @include max-media($bk-d-768) {
-            position: static;
-            margin-bottom: 20px;
-        }
-    }
-
     .staff-head-t {
         border-left: 2px solid $b-cl;
         border-radius: 2px;
         padding-left: 12px;
+        margin-bottom: 20px;
 
         @include max-media($bk-d-1024) {
             padding-left: 6px;
         }
 
-        // margin-bottom: 30px;
-
-
-        // @include max-media($bk-d-1200) {
-        //     margin-bottom: 20px;
-        // }
-
-        // @include max-media($bk-d-992) {
-        //     margin-bottom: 15px;
-        // }
+        @include max-media($bk-d-992) {
+            margin-bottom: 15px;
+        }
 
     }
 
@@ -381,24 +205,59 @@
         @include line-clamp(3);
     }
 
-    .staff-arrow {
-        position: absolute;
-        bottom: 22%;
-        left: 0;
-        height: 30px;
-        width: 76px;
-        height: 30px;
+    .staff-img {
+        border-radius: 10px;
 
-        @include max-media($bk-d-1200) {
-            bottom: 29%;
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+
+    // slide
+    .staff-small {
+        .swiper-slide {
+            @include hidden;
+            transition: all .3s ease
         }
 
-        @include max-media($bk-d-992) {
-            bottom: 0%;
-        }
+        .swiper-slide-active {
+            @include visible;
 
-        @include max-media($bk-d-768) {
-            position: relative;
+            .staff-desc {
+                animation: slide-in-bottom .8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+                @include max-media($bk-d-768) {
+                    animation: none;
+                }
+            }
+
+            .staff-t {
+                animation: slide-in-right .8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+                @include max-media($bk-d-768) {
+                    animation: none;
+                }
+            }
+        }
+    }
+
+    .staff-big {
+        .swiper {
+            border-radius: 10px;
+        }
+    }
+
+    .swiper-arrow {
+        height: 30px;
+        width: 80px;
+        position: relative;
+        margin-top: 20px;
+
+        @include max-media($bk-576) {
             margin-top: 15px;
         }
     }
@@ -419,134 +278,15 @@
         }
     }
 
-    .swiper-button-next {
-        right: auto;
-        left: 46px;
-    }
-
     .swiper-button-prev {
         left: 0;
     }
 
-    .swiper-slide {
-        width: 100%;
-        border-radius: 10px;
-        margin-right: 30px;
-
-        @include max-media($bk-d-1024) {
-            margin-right: 20px;
-        }
-
-        @include max-media($bk-d-768) {
-            margin-right: 15px;
-        }
+    .swiper-button-next {
+        right: 0;
     }
-
-    .swiper-slide-active {
-        .staff-tx {
-            animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
-            @include max-media($bk-d-768) {
-                animation: none;
-            }
-        }
-
-        .staff-ig {
-            animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
-            @include max-media($bk-d-768) {
-                animation: none;
-            }
-        }
-    }
-
-    .staff-slide {
-        border-radius: 10px;
-
-        .swiper {
-            @include max-media($bk-d-992) {
-                border-radius: 10px;
-            }
-        }
-
-        .swiper-wrapper {
-            // position: static;
-
-        }
-    }
-
-    .staff-cols {
-        display: flex;
-        flex-direction: row-reverse;
-        margin: - 15px;
-        align-items: center;
-
-        @include max-media($bk-d-1200) {
-            align-items: flex-start;
-        }
-
-        @include max-media($bk-d-992) {
-            margin: -7.5px;
-        }
-
-        @include max-media($bk-d-768) {
-            flex-direction: column;
-        }
-    }
-
-    .staff-col {
-        padding: 15px;
-
-        @include max-media($bk-d-992) {
-            padding: 7.5px;
-        }
-
-        &.staff-ig {
-            width: calc(100% / 12 * 7);
-
-            @include max-media($bk-d-768) {
-                width: 100%;
-            }
-        }
-
-        &.staff-tx {
-            width: calc(100% / 12 * 5);
-
-            @include max-media($bk-d-768) {
-                width: 100%;
-            }
-        }
-    }
-
-    .staff-img {
-        border-radius: 10px;
-        // box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
-
-        img {
-            width: 100%;
-            height: 100%;
-            max-width: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-    }
-
-    .staff-slide-text {
-        @include max-media($bk-d-1200) {
-            padding-top: 80px;
-        }
-
-        @include max-media($bk-d-992) {
-            padding-top: 70px;
-        }
-
-        @include max-media($bk-d-768) {
-            padding-top: 0px;
-        }
-    }
-
-
 }
+
 
 .choose-us {
     background-color: rgba($color: $main-cl, $alpha: .05);
@@ -731,10 +471,12 @@
         overflow: hidden;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
         border-radius: 10px;
-        @include max-media($bk-d-1200){
+        background-color: $w-cl;
+        @include max-media($bk-d-1200) {
             height: 170px;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             height: 195px;
         }
 
@@ -812,19 +554,18 @@
     .customer-ig {
         position: relative;
 
-        &.active {
+        // &.active {
+        //     .ig-rote-wrap {
+        //         animation: rotate-in-center 2s linear both;
+        //         transition: all 2s ease;
+        //     }
 
-            .ig-rote-wrap {
-                animation: rotate-in-center 2s linear both;
-                transition: all 2s ease;
-            }
+        //     .ig-rote-wap {
+        //         animation: rotate-in-center-2 2.5s linear both;
+        //         transition: all 2.5s ease;
+        //     }
 
-            .ig-rote-wap {
-                animation: rotate-in-center-2 2.5s linear both;
-                transition: all 2.5s ease;
-            }
-
-        }
+        // }
 
     }
 
@@ -847,12 +588,12 @@
             @include pos-mid;
             width: 100%;
             height: 100%;
-            animation: rotate-in-center 30s linear infinite both;
+            // animation: rotate-in-center 30s linear infinite both;
             transition: all .3s ease;
 
-            @include max-media($bk-d-768) {
-                animation: none;
-            }
+            // @include max-media($bk-d-768) {
+            //     animation: none;
+            // }
         }
     }
 
@@ -872,12 +613,12 @@
             @include pos-mid;
             width: 100%;
             height: 100%;
-            animation: rotate-in-center-2 30s linear infinite both;
+            // animation: rotate-in-center-2 30s linear infinite both;
             transition: all .3s ease;
 
-            @include max-media($bk-d-768) {
-                animation: none;
-            }
+            // @include max-media($bk-d-768) {
+            //     animation: none;
+            // }
         }
     }
 

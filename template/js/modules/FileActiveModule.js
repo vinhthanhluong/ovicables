@@ -22,20 +22,37 @@ export default function FileActiveModule() {
     const $width = $(window).width();
 
     if ($('.customer-ig').length && $width >= 768) {
-        $('.customer-ig').on('mouseover', function () {
-            // $(this).addClass('active');
-        });
-        // $('.customer-ig').on('mouseout', function () {
-        //     $(this).removeClass('active');
-        // });
 
-        $('.customer-ig').hover(function () {
-            $(this).addClass('active');
-
-        }, function () {
-            // out
+        const roteWrap = document.querySelector('.ig-rote-wrap');
+        let deg = 10;
+        let roteWrap_Interval;
+        roteWrap_Interval =  setInterval(wrap_roted , 100);
+        function wrap_roted() {
+            roteWrap.style.transform = "translate(-50%, -50%)" + "rotate(" + deg +  "deg)"    ;       
+            deg = (deg + 2) ;
         }
-        );
+    
+        $('.ig-rote-wrap').hover(function () { 
+            clearInterval(roteWrap_Interval);
+        },function(){
+            roteWrap_Interval =  setInterval(wrap_roted , 100);
+        });
+        
+        const roteWap = document.querySelector('.ig-rote-wap');
+        let roteWap_Interval;
+        let deg_w = -10;
+        roteWap_Interval =  setInterval(wap_roted , 100);
+        function wap_roted() {
+            roteWap.style.transform = "translate(-50%, -50%)" + "rotate(" + deg_w +  "deg)"    ;       
+            deg_w = (deg_w - 3) ;
+        }
+        $('.ig-rote-wap').hover(function () { 
+            clearInterval(roteWap_Interval);
+        },function(){
+            roteWap_Interval =  setInterval(wap_roted , 100);
+        });
+
+       
     }
 
     if ($('.bx-f').length) {
